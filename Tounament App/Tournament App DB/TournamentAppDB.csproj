@@ -7,8 +7,8 @@
     <ProjectGuid>{09109F05-11E0-4942-81AE-083733C8BFC2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tournament_App_DB</RootNamespace>
-    <AssemblyName>Tournament App DB</AssemblyName>
+    <RootNamespace>TournamentAppDB</RootNamespace>
+    <AssemblyName>TournamentAppDB</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HearthstoneDBClient.cs" />
+    <Compile Include="Model\Card.cs" />
+    <Compile Include="Model\Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

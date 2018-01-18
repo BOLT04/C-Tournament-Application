@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tounament_App
+namespace TounamentApp
 {
     public partial class AppForm : Form
     {

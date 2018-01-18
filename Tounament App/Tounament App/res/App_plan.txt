@@ -1,0 +1,5 @@
+Requirements/Goals:
+	1)Have a nice, modern, good looking UI
+	2)Have a start menu with 2 buttons: Play and Edit character 
+	3)Various levels to play through
+	

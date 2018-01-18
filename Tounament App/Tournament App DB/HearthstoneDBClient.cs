@@ -1,16 +1,21 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
+using System.Collections.Generic;
+using System.Linq;
+using TournamentAppDB.Model;
 
-
-namespace TournamentAppDB
-{
+namespace TournamentAppDB {
     public class HearthstoneDBClient {
+        
         WebClient client = new WebClient();
 
         readonly string API_URL = "https://api.hearthstonejson.com/v1/22611/enUS/cards.collectible.json";
 
-        public Card[] GetCards()
-        {
+        //The key is the name of the card which should be unique
+        //The value is the card object that is associated with that name.
+        private Dictionary<string, Card> cards = new Dictionary<string, Card>();
+
+        public HearthstoneDBClient() {
             string body = client.DownloadString(API_URL);
 
             //Alternate way to get the JSON string
@@ -19,15 +24,16 @@ namespace TournamentAppDB
 
             Card[] searchItem = (Card[])JsonConvert.DeserializeObject(body, typeof(Card[]));
 
-            return searchItem;
+            //Initialize dictionary.
+            cards = searchItem.ToDictionary(c => c.name);
         }
 
-        public class Card
+        public Card GetCard(string name)
         {
-            public int cost;
-
-            public string name;
+            return cards[name];
         }
+
+       
 
     }
 }

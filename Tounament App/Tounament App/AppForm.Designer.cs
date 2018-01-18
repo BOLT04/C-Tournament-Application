@@ -1,4 +1,4 @@
-﻿namespace Tounament_App
+﻿namespace TounamentApp
 {
     partial class AppForm
     {

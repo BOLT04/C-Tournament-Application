@@ -2,19 +2,17 @@
 using System;
 using TournamentAppDB;
 
-namespace TournamentAppDBTest
-{
+namespace TournamentAppDBTest{
     [TestClass]
     public class TournamentAppDBTest {
 
         [TestMethod]
-        public void CardTest1()
-        {
+        public void SingleCardTest() {
             //Get the items returned by the search.
-            HearthstoneDBClient.Card mv = new HearthstoneDBClient().GetCards()[0];
-            Assert.AreEqual("Flame Lance", mv.name);
-            Assert.AreEqual(5, mv.cost);
+            HearthstoneDBClient.Card card = new HearthstoneDBClient().GetCard("Flame Lance");
+            Assert.AreEqual(5, card.cost);
         }
+
 
     }
 }
