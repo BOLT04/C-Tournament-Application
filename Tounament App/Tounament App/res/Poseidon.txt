@@ -1,0 +1,4 @@
+{
+	"name": "Poseidon",
+	"atk": 10
+}
