@@ -9,11 +9,12 @@ namespace TournamentAppDB {
         
         private WebClient client = new WebClient();
 
-        readonly string API_URL = "https://api.hearthstonejson.com/v1/22611/enUS/cards.collectible.json";
+        readonly string API_URL = "https://api.hearthstonejson.com/v1/22611/enUS/cards.json";
 
-        //The key is the name of the card which should be unique
+        //The key is a tuple since the name of a card isn't unique enough.
+        //1st element being the name of the card and the 2nd being the card's id.
         //The value is the card object that is associated with that name.
-        private Dictionary<string, Card> cards = new Dictionary<string, Card>();
+        private Dictionary<(string, string), Card> cards = new Dictionary<(string, string), Card>();
 
 
         public HearthstoneDBClient() {
@@ -26,10 +27,11 @@ namespace TournamentAppDB {
             Card[] cards = (Card[])JsonConvert.DeserializeObject(body, typeof(Card[]));
 
             //Initialize dictionary from the cards array.
-            this.cards = cards.ToDictionary(c => c.Name);
+            this.cards = cards.ToDictionary(c => (c.Name, c.Id));
         }
 
-        public Card GetCard(string name) => cards[name];
+        public Card GetCard(string name, string id) => cards[(name, id)];
+        
 
     }
 }

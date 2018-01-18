@@ -30,6 +30,9 @@ namespace TournamentAppDB.Model {
         [JsonProperty("rarity")]
         public string Rarity { get; set; }
 
+        [JsonProperty("race")]
+        public string Race { get; set; }
+
         [JsonProperty("type")]
         public string Type { get; set; }
 
