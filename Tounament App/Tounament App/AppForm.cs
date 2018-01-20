@@ -16,5 +16,17 @@ namespace TounamentApp
         {
             InitializeComponent();
         }
+
+        private void AppForm_Load(object sender, EventArgs e) {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e) {
+
+        }
     }
 }
