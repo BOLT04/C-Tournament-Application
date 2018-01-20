@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TournamentAppDB.Model;
 
 namespace TounamentApp
 {
-    public partial class AppForm : Form
-    {
-        public AppForm()
-        {
+    public partial class AppForm : Form {
+        public Game game;//TODO: should this field exist in this class? Or in App.cs?
+
+        public AppForm() {
             InitializeComponent();
         }
 
@@ -27,6 +28,20 @@ namespace TounamentApp
 
         private void panel1_Paint(object sender, PaintEventArgs e) {
 
+        }
+
+        private void playBtn_Click(object sender, EventArgs e) {
+            if (game == null)// In case it was already instanciated.
+                game = new Game();
+            //game.start();
+            PlayForm playForm = new PlayForm();
+            //Show the new window and hide the current one.
+            playForm.Show();
+            Hide();
+        }
+
+        private void editCharacter_Click(object sender, EventArgs e) {
+            
         }
     }
 }

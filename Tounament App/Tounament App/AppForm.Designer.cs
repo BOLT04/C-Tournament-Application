@@ -32,9 +32,9 @@
             this.playBtn = new System.Windows.Forms.Button();
             this.editCharacter = new System.Windows.Forms.Button();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.playerInfoIcon = new System.Windows.Forms.Button();
             this.gameNamePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.S = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.gameNamePanel.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,7 @@
             this.playBtn.TabIndex = 0;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = true;
+            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
             // editCharacter
             // 
@@ -59,17 +60,33 @@
             this.editCharacter.TabIndex = 1;
             this.editCharacter.Text = "Edit Character";
             this.editCharacter.UseVisualStyleBackColor = true;
+            this.editCharacter.Click += new System.EventHandler(this.editCharacter_Click);
             // 
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.leftPanel.Controls.Add(this.S);
+            this.leftPanel.Controls.Add(this.playerInfoIcon);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(116, 427);
             this.leftPanel.TabIndex = 2;
             this.leftPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // playerInfoIcon
+            // 
+            this.playerInfoIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerInfoIcon.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerInfoIcon.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.playerInfoIcon.Image = ((System.Drawing.Image)(resources.GetObject("playerInfoIcon.Image")));
+            this.playerInfoIcon.Location = new System.Drawing.Point(0, 251);
+            this.playerInfoIcon.Name = "playerInfoIcon";
+            this.playerInfoIcon.Size = new System.Drawing.Size(116, 91);
+            this.playerInfoIcon.TabIndex = 1;
+            this.playerInfoIcon.Text = "Player Information";
+            this.playerInfoIcon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.playerInfoIcon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.playerInfoIcon.UseVisualStyleBackColor = true;
             // 
             // gameNamePanel
             // 
@@ -90,21 +107,6 @@
             this.label1.Size = new System.Drawing.Size(308, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "The Ultimate Tournament";
-            // 
-            // S
-            // 
-            this.S.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.S.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.S.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.S.Image = ((System.Drawing.Image)(resources.GetObject("S.Image")));
-            this.S.Location = new System.Drawing.Point(0, 251);
-            this.S.Name = "S";
-            this.S.Size = new System.Drawing.Size(116, 91);
-            this.S.TabIndex = 1;
-            this.S.Text = "Player Information";
-            this.S.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.S.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.S.UseVisualStyleBackColor = true;
             // 
             // AppForm
             // 
@@ -136,7 +138,7 @@
         private System.Windows.Forms.Button editCharacter;
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Panel gameNamePanel;
-        private System.Windows.Forms.Button S;
+        private System.Windows.Forms.Button playerInfoIcon;
         private System.Windows.Forms.Label label1;
     }
 }

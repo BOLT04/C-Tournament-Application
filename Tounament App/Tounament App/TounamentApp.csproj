@@ -52,9 +52,18 @@
       <DependentUpon>AppForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
+    <Compile Include="PlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayForm.Designer.cs">
+      <DependentUpon>PlayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayForm.resx">
+      <DependentUpon>PlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="res\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tournament App DB\TournamentAppDB.csproj">
+      <Project>{09109f05-11e0-4942-81ae-083733c8bfc2}</Project>
+      <Name>TournamentAppDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
