@@ -54,7 +54,7 @@ namespace TournamentAppDB.Model {
 
         /// <summary>
         /// Type of the card.
-        /// Possible values = SPELL, WEAPON, MINION, HERO
+        /// Possible values = SPELL, WEAPON, MINION
         /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }

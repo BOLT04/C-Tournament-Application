@@ -34,9 +34,11 @@ namespace TounamentAppUI
             if (game == null)// In case it was already instanciated.
                 game = new Game();
             //game.start();
-            PlayForm playForm = new PlayForm();
+
             //Show the new window and hide the current one.
-            playForm.Show();
+            //TODO:
+            //Extract this code to an extension method of Form called ShowAndHideCurr() => new PlayForm().ShowAndHideCurr(this)
+            new PlayForm().Show();
             Hide();
         }
 

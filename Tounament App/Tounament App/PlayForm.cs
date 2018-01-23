@@ -13,5 +13,18 @@ namespace TounamentAppUI {
         public PlayForm() {
             InitializeComponent();
         }
+
+        private void onLevelImg1Click(object sender, EventArgs e) {
+            new TournamentViewer().Show();
+            Hide();
+        }
+
+        private void PlayForm_Load(object sender, EventArgs e) {
+
+        }
+
+        private void levelImg3_Click(object sender, EventArgs e) {
+
+        }
     }
 }
