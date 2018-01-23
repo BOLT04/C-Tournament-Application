@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TounamentApp", "Tounament App\TounamentApp.csproj", "{49C235CE-6AC9-4664-8BF2-4BCC582ABF2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TounamentAppUI", "Tounament App\TounamentAppUI.csproj", "{49C235CE-6AC9-4664-8BF2-4BCC582ABF2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentAppDB", "Tournament App DB\TournamentAppDB.csproj", "{09109F05-11E0-4942-81AE-083733C8BFC2}"
 EndProject

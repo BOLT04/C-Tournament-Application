@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TounamentApp {
+namespace TounamentAppUI {
     public partial class PlayForm : Form {
         public PlayForm() {
             InitializeComponent();

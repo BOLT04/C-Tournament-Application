@@ -1,4 +1,4 @@
-﻿namespace TounamentApp {
+﻿namespace TounamentAppUI {
     partial class PlayForm {
         /// <summary>
         /// Required designer variable.

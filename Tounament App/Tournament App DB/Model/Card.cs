@@ -3,15 +3,30 @@
 namespace TournamentAppDB.Model {
     public class Card {
 
+        /// <summary>
+        /// Represents the card's attack value.
+        /// </summary>
         [JsonProperty("attack")]
         public int Attack { get; set; }
 
+
+        /// <summary>
+        /// Represents the card's mana cost.
+        /// </summary>
         [JsonProperty("cost")]
         public int Cost { get; set; }
 
+
+        /// <summary>
+        /// Represents the card's health value.
+        /// </summary>
         [JsonProperty("health")]
         public int Health { get; set; }
 
+
+        /// <summary>
+        /// Unique identifier of a specific card.
+        /// </summary>
         [JsonProperty("id")]
         public string Id { get; set; }
 
@@ -21,6 +36,9 @@ namespace TournamentAppDB.Model {
         [JsonProperty("text")]
         public string Text { get; set; }
 
+        /// <summary>
+        /// Represents the flavor text of the card.
+        /// </summary>
         [JsonProperty("flavor")]
         public string Flavor { get; set; }
 
@@ -33,6 +51,11 @@ namespace TournamentAppDB.Model {
         [JsonProperty("race")]
         public string Race { get; set; }
 
+
+        /// <summary>
+        /// Type of the card.
+        /// Possible values = SPELL, WEAPON, MINION, HERO
+        /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }
 

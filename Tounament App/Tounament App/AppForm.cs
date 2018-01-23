@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TournamentAppDB.Model;
 
-namespace TounamentApp
+namespace TounamentAppUI
 {
     public partial class AppForm : Form {
         public Game game;//TODO: should this field exist in this class? Or in App.cs?
