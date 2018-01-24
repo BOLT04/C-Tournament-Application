@@ -48,8 +48,11 @@
   <ItemGroup>
     <Compile Include="HearthstoneDBClient.cs" />
     <Compile Include="Model\Card.cs" />
+    <Compile Include="Model\Enemy.cs" />
     <Compile Include="Model\Game.cs" />
-    <Compile Include="Model\Tournament.cs" />
+    <Compile Include="Model\Tournaments\Tournament.cs" />
+    <Compile Include="Model\Tournaments\Tournament2.cs" />
+    <Compile Include="Model\Tournaments\Tournament1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

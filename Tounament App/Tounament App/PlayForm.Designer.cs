@@ -65,7 +65,7 @@
             this.levelImg1.Size = new System.Drawing.Size(100, 100);
             this.levelImg1.TabIndex = 1;
             this.levelImg1.TabStop = false;
-            this.levelImg1.Click += new System.EventHandler(this.onLevelImg1Click);
+            this.levelImg1.Click += new System.EventHandler(this.OnLevelImg1Click);
             // 
             // levelImg2
             // 
@@ -75,6 +75,7 @@
             this.levelImg2.Size = new System.Drawing.Size(100, 100);
             this.levelImg2.TabIndex = 2;
             this.levelImg2.TabStop = false;
+            this.levelImg2.Click += new System.EventHandler(this.OnLevelImg2Click);
             // 
             // levelImg3
             // 
@@ -84,7 +85,7 @@
             this.levelImg3.Size = new System.Drawing.Size(100, 100);
             this.levelImg3.TabIndex = 3;
             this.levelImg3.TabStop = false;
-            this.levelImg3.Click += new System.EventHandler(this.levelImg3_Click);
+            this.levelImg3.Click += new System.EventHandler(this.OnLevelImg3Click);
             // 
             // levelImg4
             // 
@@ -93,6 +94,7 @@
             this.levelImg4.Size = new System.Drawing.Size(100, 100);
             this.levelImg4.TabIndex = 4;
             this.levelImg4.TabStop = false;
+            this.levelImg4.Click += new System.EventHandler(this.OnLevelImg4Click);
             // 
             // levelImg5
             // 
@@ -101,6 +103,7 @@
             this.levelImg5.Size = new System.Drawing.Size(100, 100);
             this.levelImg5.TabIndex = 5;
             this.levelImg5.TabStop = false;
+            this.levelImg5.Click += new System.EventHandler(this.OnLevelImg5Click);
             // 
             // levelImg6
             // 
