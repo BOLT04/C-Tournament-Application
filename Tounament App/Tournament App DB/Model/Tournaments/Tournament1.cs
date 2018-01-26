@@ -12,12 +12,15 @@ namespace TournamentAppDB.Model.Tournaments {
         private readonly string ENEMY3_NAME = "Roy Mustang";
 
         public Tournament1() {
-
             Enemies = new List<Enemy> {
                 new Enemy(ENEMY1_NAME),
                 new Enemy(ENEMY2_NAME),
                 new Enemy(ENEMY3_NAME)
             };
+        }
+
+        public Tournament1(string playerName) : this() {
+            Player = new Player(playerName);
         }
     }
 }

@@ -3,4 +3,7 @@ Requirements/Goals:
 	2)Have a start menu with 2 buttons: Play and Edit character 
 	3)Various levels to play through
 	4)Make a loading and save system so that the player doesn't lose progress
+	5)Make the decks appear has an image corresponding each deck instead of a list of deck names
+		->  Requires either a window with a slider if there is an infinite number of decks, or
+		   a window with the max number of decks equaling the number of images.
 	

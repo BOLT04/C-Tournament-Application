@@ -106,5 +106,11 @@
       <Name>TournamentAppDB</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deckImg1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\vs_image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TounamentAppUI.Properties {
+namespace TournamentAppDB.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TounamentAppUI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TounamentAppUI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TournamentAppDB.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,12 +61,11 @@ namespace TounamentAppUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to C:\Users\JoséDavid\source\repos\C-Tournament-Application\Tounament App\Tounament App\res.
         /// </summary>
-        internal static System.Drawing.Bitmap deckImg1 {
+        internal static string resPath {
             get {
-                object obj = ResourceManager.GetObject("deckImg1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("resPath", resourceCulture);
             }
         }
     }

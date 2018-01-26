@@ -23,5 +23,9 @@ namespace TournamentAppDB.Model.Tournaments {
                 new Enemy(ENEMY4_NAME)
             };
         }
+
+        public Tournament2(string playerName) : this() {
+            Player = new Player(playerName);
+        }
     }
 }
