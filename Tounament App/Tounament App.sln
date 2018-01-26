@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentAppDB", "Tourname
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentAppDBTest", "TournamentAppDBTest\TournamentAppDBTest.csproj", "{A97F5520-B159-4427-8807-DCF104B2C0DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentAppUITest", "TournamentAppUITest\TournamentAppUITest.csproj", "{D11AB9EC-856F-487F-A616-C0B9A0813AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A97F5520-B159-4427-8807-DCF104B2C0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A97F5520-B159-4427-8807-DCF104B2C0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A97F5520-B159-4427-8807-DCF104B2C0DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,4 +6,10 @@ Requirements/Goals:
 	5)Make the decks appear has an image corresponding each deck instead of a list of deck names
 		->  Requires either a window with a slider if there is an infinite number of decks, or
 		   a window with the max number of decks equaling the number of images.
+
+"Code Design" Questions:
+	1)Should the members in TournamentViewer, or in general, any UI element, be public or private?
+	In this case, if the property Tournament was private, we wouldn't be able to have Unit tests that test
+	the funcionality of this class. But since its public, it'd also mean the code is more prior to error, a
+	simple example would be assigning it to null somewhere in the code which could happen.
 	

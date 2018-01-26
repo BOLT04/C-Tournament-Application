@@ -16,9 +16,6 @@ namespace TournamentAppDB.Model {
 
         public Player() {
             Decks = new List<Deck>();
-
-            //TEST PURPOSES
-            Decks.Add(new Deck("First 1", Properties.Resources.resPath + "\\card_nature icon.png"));
         }
 
         public Player(string name) : this(){

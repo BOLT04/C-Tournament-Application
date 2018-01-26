@@ -15,10 +15,12 @@ namespace TounamentAppUI {
     public partial class TournamentViewer : Form {
 
         private readonly int DECK_MAX_NUMBER = 8;// Re-allocate this to a constants interface ??
-                                   // Doesn't make much sense for the constant to be in the tournament Viewer.
+                                                 // Doesn't make much sense for the constant to be in the tournament Viewer.
 
-        //Model side of this tournament viewer.
-        private Tournament tournament;
+        /// <summary>
+        /// Model side of this tournament viewer.
+        /// </summary>
+        public Tournament Tr { get; set; }
         //Array that contains a reference to all deck images defined on the other part of this class.
         public PictureBox[] deckImgs;
         public Label[] deckLabels;
@@ -27,7 +29,7 @@ namespace TounamentAppUI {
             InitializeComponent();
 
             tournamentLabel.Text = name;  //Change the text on the upper label.
-            this.tournament = tournament;
+            Tr = tournament;
 
             /*Define and initialize the deckImgs and deckLabels arrays.*/
             //TODO: Maybe instead of having these two arrays, make a new class that represents one DeckViewer
@@ -64,20 +66,17 @@ namespace TounamentAppUI {
         private void InitializeEnemyListView() {
             //TODO: This code could probably get cleaner, 
             //it's not cristal clear at the first glance when it should!!
-            ListViewItem[] enemies = new ListViewItem[tournament.Enemies.Count];
+            ListViewItem[] enemies = new ListViewItem[Tr.Enemies.Count];
             int i = 0;
-            foreach (Enemy e in tournament.Enemies)
+            foreach (Enemy e in Tr.Enemies)
                 enemies[i++] = new ListViewItem(e.Name);
 
             enemiesListView.Items.AddRange(enemies);
         }
 
-        
-
-        
         private void InitializePlayerListView() {
             int i = 0;
-            foreach (Deck deck in tournament.Player.Decks) {
+            foreach (Deck deck in Tr.Player.Decks) {
                 deckImgs[i].ChangeImageTo(deck.Path);
                 deckLabels[i++].Text = deck.Name;
             }
