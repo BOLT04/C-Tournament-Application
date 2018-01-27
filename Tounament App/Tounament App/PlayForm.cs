@@ -21,17 +21,14 @@ namespace TounamentAppUI {
 
 
         private void OnLevelImg1Click(object sender, EventArgs e) {
-            
             //Since level 1 is always unlocked we don't need to check any property.
-            /*new TournamentViewer("Tournament 1", new Tournament1("Player 1")).Show();
-            Hide();*/
+            new TournamentViewer("Tournament 1", new Tournament1("Player 1")).ShowAndHide(this);
         }
 
         private void OnLevelImg2Click(object sender, EventArgs e) {
             if (Tournament2.Locked) return;
 
-            new TournamentViewer("Tournament 2", new Tournament2()).Show();
-            Hide();
+            new TournamentViewer("Tournament 2", new Tournament2()).ShowAndHide(this);
         }
 
         private void OnLevelImg3Click(object sender, EventArgs e) {

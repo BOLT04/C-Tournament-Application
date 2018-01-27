@@ -81,9 +81,47 @@ namespace TounamentAppUI {
                 deckLabels[i++].Text = deck.Name;
             }
         }
+
+        private void playBtn_Click(object sender, EventArgs e) {
+            new ChoosingCardsForm(Tr, deckNameSelected).ShowAndHide(this);
+        }
+
+        private string deckNameSelected;
+
+        private void DeckImg1_Click(object sender, EventArgs e) {
+            deckNameSelected = deck1Name.Text;
+        }
+
+        private void DeckImg2_Click(object sender, EventArgs e) {
+            deckNameSelected = deck2Name.Text;
+        }
+
+        private void DeckImg3_Click(object sender, EventArgs e) {
+            deckNameSelected = deck3Name.Text;
+        }
+
+        private void DeckImg4_Click(object sender, EventArgs e) {
+            deckNameSelected = deck4Name.Text;
+        }
+
+        private void DeckImg5_Click(object sender, EventArgs e) {
+            deckNameSelected = deck5Name.Text;
+        }
+
+        private void DeckImg6_Click(object sender, EventArgs e) {
+            deckNameSelected = deck6Name.Text;
+        }
+
+        private void DeckImg7_Click(object sender, EventArgs e) {
+            deckNameSelected = deck7Name.Text;
+        }
+
+        private void DeckImg8_Click(object sender, EventArgs e) {
+            deckNameSelected = deck8Name.Text;
+        }
     }
 
-    public static class PictureExtend {
+    public static class Extends {
         /// <summary>
         /// Open a new image with the given filename and assign it to this PictureBox instance.
         /// </summary>
@@ -93,6 +131,15 @@ namespace TounamentAppUI {
             img.Image = new Bitmap(fileName);
             img.Invalidate();
             img.Visible = true; //necessary??
+        }
+
+        /// <summary>
+        /// Displays the caller Form and hides the other given form.
+        /// </summary>
+        /// <param name="f">Form to hide.</param>
+        public static void ShowAndHide(this Form src, Form f) {
+            src.Show();
+            f.Hide();
         }
     }
 }

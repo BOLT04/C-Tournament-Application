@@ -22,5 +22,9 @@ namespace TournamentAppDB.Model.Tournaments {
         public Tournament1(string playerName) : this() {
             Player = new Player(playerName);
         }
+
+        public Tournament1(string playerName, List<Deck> decks) : this() {
+            Player = new Player(playerName, decks);
+        }
     }
 }

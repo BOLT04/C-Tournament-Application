@@ -22,6 +22,17 @@ namespace TournamentAppDB.Model {
         public Deck(string name, string path) : this() {
             Name = name;
             Path = path;
+
+            Validate();
+        }
+
+        private void Validate() {
+            ValidationContext context = new ValidationContext(this, null, null);
+            List<ValidationResult> results = new List<ValidationResult>();
+            bool valid = Validator.TryValidateObject(this, context, results, true);
+
+            if (!valid) 
+                throw new ArgumentException("The name of the deck is too long:" + Name);
         }
     }
 

@@ -69,5 +69,14 @@ namespace TounamentAppUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DEFAULT.
+        /// </summary>
+        internal static string defaultStr {
+            get {
+                return ResourceManager.GetString("defaultStr", resourceCulture);
+            }
+        }
     }
 }

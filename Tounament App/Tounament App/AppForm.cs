@@ -38,8 +38,7 @@ namespace TounamentAppUI
             //Show the new window and hide the current one.
             //TODO:
             //Extract this code to an extension method of Form called ShowAndHideCurr() => new PlayForm().ShowAndHideCurr(this)
-            new PlayForm().Show();
-            Hide();
+            new PlayForm().ShowAndHide(this);
         }
 
         private void editCharacter_Click(object sender, EventArgs e) {

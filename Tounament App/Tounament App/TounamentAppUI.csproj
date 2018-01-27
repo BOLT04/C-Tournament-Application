@@ -52,6 +52,18 @@
       <DependentUpon>AppForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
+    <Compile Include="BattleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BattleForm.Designer.cs">
+      <DependentUpon>BattleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChoosingCardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoosingCardsForm.Designer.cs">
+      <DependentUpon>ChoosingCardsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,12 @@
     </Compile>
     <EmbeddedResource Include="AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BattleForm.resx">
+      <DependentUpon>BattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoosingCardsForm.resx">
+      <DependentUpon>ChoosingCardsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayForm.resx">
       <DependentUpon>PlayForm.cs</DependentUpon>
