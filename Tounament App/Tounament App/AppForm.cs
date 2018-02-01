@@ -46,14 +46,17 @@ namespace TounamentAppUI
             
         }
 
-        private void PlayBtn_Paint(object sender, PaintEventArgs e)
-        {
-            LinearGradientBrush brush = new LinearGradientBrush(ClientRectangle, Color.Aqua, Color.Violet, LinearGradientMode.ForwardDiagonal);
-
+        private void PlayBtn_Paint(object sender, PaintEventArgs e) {
+            Rectangle rc = playBtn.ClientRectangle;
+            LinearGradientBrush brush = new LinearGradientBrush(rc, Color.SteelBlue, Color.Silver, 90F);
+            
             SolidBrush drawBrush = new SolidBrush(Color.Black);
 
-            e.Graphics.FillRectangle(brush, ClientRectangle);
-            e.Graphics.DrawString(playBtn.Text, new Font("Sitka Heading", 12F, FontStyle.Bold), drawBrush, new PointF(50, 50));
+            e.Graphics.FillRectangle(brush, rc);
+
+            int x = rc.Width / 2 -20; 
+            int y = rc.Height / 2;
+            e.Graphics.DrawString(playBtn.Text, new Font("Sitka Heading", 12F, FontStyle.Bold), drawBrush, new PointF(x, y));
         }
     }
 }

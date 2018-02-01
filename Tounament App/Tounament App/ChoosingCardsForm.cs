@@ -35,13 +35,8 @@ namespace TounamentAppUI {
             Deck selDeck = Tr.Player.Decks.Find(d => d.Name.Equals(deckName));
 
             foreach (Card c in selDeck.Cards) {
-                //Make CardViewer instance.
-
-                //CardViewer cV = new CardViewer(c);
-                CardViewer cV = new CardViewer();
-                //Button b1 = new Button();
+                CardViewer cV = new CardViewer(c);
                 cardsPanel.Controls.Add(cV);
-                
             }
         }
 

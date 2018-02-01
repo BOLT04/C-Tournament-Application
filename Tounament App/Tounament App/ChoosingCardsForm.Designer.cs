@@ -27,8 +27,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cardsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.vScrollBar = new System.Windows.Forms.VScrollBar();
-            this.cardViewer1 = new TounamentAppUI.CardViewer();
-            this.cardsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -43,7 +41,6 @@
             // 
             // cardsPanel
             // 
-            this.cardsPanel.Controls.Add(this.cardViewer1);
             this.cardsPanel.Location = new System.Drawing.Point(31, 103);
             this.cardsPanel.Name = "cardsPanel";
             this.cardsPanel.Size = new System.Drawing.Size(670, 276);
@@ -56,17 +53,6 @@
             this.vScrollBar.Name = "vScrollBar";
             this.vScrollBar.Size = new System.Drawing.Size(16, 276);
             this.vScrollBar.TabIndex = 0;
-            // 
-            // cardViewer1
-            // 
-            this.cardViewer1.Card = null;
-            this.cardViewer1.Img = null;
-            this.cardViewer1.Location = new System.Drawing.Point(3, 3);
-            this.cardViewer1.Name = "cardViewer1";
-            this.cardViewer1.Rect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.cardViewer1.Size = new System.Drawing.Size(75, 23);
-            this.cardViewer1.TabIndex = 0;
-            this.cardViewer1.Text2 = "oi Hp";
             // 
             // ChoosingCardsForm
             // 
@@ -83,7 +69,6 @@
             this.Name = "ChoosingCardsForm";
             this.Text = "The Ultimate Tournament";
             this.Load += new System.EventHandler(this.ChoosingCardsForm_Load);
-            this.cardsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,6 +79,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel cardsPanel;
         private System.Windows.Forms.VScrollBar vScrollBar;
-        private CardViewer cardViewer1;
     }
 }

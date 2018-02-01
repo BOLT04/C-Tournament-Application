@@ -11,8 +11,11 @@ using TournamentAppDB.Model;
 
 namespace TounamentAppUI {
     public partial class CardViewer : Control {
-        
-        public new string Text {
+
+        public new string Text { get; set; }
+
+        [Category("Appearance")]
+        public string Atk {
             get {
                 return AtkLabel.Text;
             }
@@ -26,7 +29,7 @@ namespace TounamentAppUI {
         }
 
         [Category("Appearance")]
-        public string Text2 {
+        public string Hp {
             get {
                 return HpLabel.Text;
             }
@@ -41,8 +44,8 @@ namespace TounamentAppUI {
 
         public static readonly int INIT_X = 100;
         public static readonly int INIT_Y = 100;
-        public static readonly int WIDTH  = 200;
-        public static readonly int HEIGHT = 250;
+        public static readonly int WIDTH  = 100;
+        public static readonly int HEIGHT = 90;
 
         public Card Card { get; set; }
         public PictureBox Img { get; set; }
@@ -54,27 +57,16 @@ namespace TounamentAppUI {
         public CardViewer() {
             InitializeComponent();
 
-            AtkLabel = new Label {
-                Text = " oi Atk"
-            };
-
-            HpLabel = new Label {
-                Text = "oi Hp"
-            };
-
             //This is generated when adding a cardViewer in design.
             Location = new Point(3, 3);
-            Size = new Size(150, 200);
+            Size = new Size(WIDTH, HEIGHT);
         }
         
         public CardViewer(Card c) : this() {
             Card = c;
 
             Text = c.Name;
-            /*Name = new Label {
-                Text = c.Name
-            };
-            */
+            
             HpLabel = new Label {
                 Text = c.Health.ToString()
             };
@@ -82,9 +74,6 @@ namespace TounamentAppUI {
             AtkLabel = new Label {
                 Text = c.Attack.ToString()
             };
-
-            
-                //new Rectangle(INIT_X, INIT_Y, WIDTH, HEIGHT);
         } 
         
         protected override void OnPaint(PaintEventArgs pe) {
@@ -92,12 +81,22 @@ namespace TounamentAppUI {
 
             Rectangle rc = new Rectangle(ClientRectangle.X, ClientRectangle.Y, WIDTH, HEIGHT);
 
-            Brush b = new SolidBrush(Color.Yellow);
-            Brush b2 = new SolidBrush(Color.DarkGreen);
-            g.FillRectangle(b, rc);
-            g.DrawString(Text2, new Font("Verdana", 20.20F), b2, rc.Left, 50);
+            Brush wBrush = new SolidBrush(Color.White);
+            Brush dGBrush = new SolidBrush(Color.DarkGreen);
+            Brush ccBrush = new SolidBrush(Color.Violet);// Card class text brush.
 
-            g.DrawString(Text, new Font("Verdana", 20.25F), b2, new RectangleF(rc.Left, rc.Top, rc.Width, rc.Height));
+            g.FillRectangle(wBrush, rc);
+
+            g.DrawString(Text, new Font("Verdana", 8F), dGBrush, new RectangleF(rc.Left, rc.Top, rc.Width, rc.Height));
+            g.DrawString(Card.Type, new Font("Verdana", 10F), ccBrush, new RectangleF(rc.Left, rc.Top + 20, rc.Width, rc.Height));
+
+            int statsY = rc.Bottom - 20;// y coordinate for Hp and Atk strings
+
+            if (Card.Health > 0)
+                g.DrawString(Hp, new Font("Verdana", 10.20F), dGBrush, rc.Right -18, statsY);
+            if (Card.Attack > 0)
+                g.DrawString(Atk, new Font("Verdana", 10.20F), dGBrush, rc.Left, statsY);
+
         }
 
         protected override void OnPaintBackground(PaintEventArgs pevent) {
