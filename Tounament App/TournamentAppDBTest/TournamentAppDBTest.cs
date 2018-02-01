@@ -26,10 +26,6 @@ namespace TournamentAppDBTest{
             //Get the items returned by the search.
             Card card = hDBClient.GetCard(expectedName, expectedId);
 
-            if (card == null)// Then it means there is no card associated with that key.
-                throw new ArgumentException("There is no card in the database with the name: " + expectedName +
-                                            ", and id: " + expectedId);
-
             Assert.AreEqual(expectedCardClass, card.CardClass);
             Assert.AreEqual(expectedCost,      card.Cost);
             Assert.AreEqual(expectedFlavor,    card.Flavor);
@@ -59,10 +55,6 @@ namespace TournamentAppDBTest{
 
             //Get the items returned by the search.
             Card card = hDBClient.GetCard(expectedName, expectedId);
-
-            if (card == null)// Then it means there is no card associated with that key.
-                throw new ArgumentException("There is no card in the database with the name: " + expectedName +
-                                            ", and id: "+ expectedId);
 
             Assert.AreEqual(expectedATK, card.Attack);
             Assert.AreEqual(expectedCardClass, card.CardClass);

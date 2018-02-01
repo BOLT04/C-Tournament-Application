@@ -43,7 +43,8 @@
             this.playBtn.TabIndex = 0;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = true;
-            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
+            this.playBtn.Click += new System.EventHandler(this.PlayBtn_Click);
+            this.playBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.PlayBtn_Paint);
             // 
             // editCharacter
             // 
@@ -55,7 +56,7 @@
             this.editCharacter.TabIndex = 1;
             this.editCharacter.Text = "Edit Character";
             this.editCharacter.UseVisualStyleBackColor = true;
-            this.editCharacter.Click += new System.EventHandler(this.editCharacter_Click);
+            this.editCharacter.Click += new System.EventHandler(this.EditCharacter_Click);
             // 
             // leftPanel
             // 

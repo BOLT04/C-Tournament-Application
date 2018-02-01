@@ -3,6 +3,7 @@ using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using TournamentAppDB.Model;
+using System;
 
 namespace TournamentAppDB {
     public class HearthstoneDBClient {
@@ -30,8 +31,14 @@ namespace TournamentAppDB {
             this.cards = cards.ToDictionary(c => (c.Name, c.Id));
         }
 
-        public Card GetCard(string name, string id) => cards[(name, id)];
-        
+        public Card GetCard(string name, string id) {
+            Card c = cards[(name, id)];
+
+            if (c == null)// Then it means there is no card associated with that key.
+                throw new ArgumentException("There is no card in the database with the name: " + name +
+                                            ", and id: " + id);
+            return c;
+        }
 
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TournamentAppDB.Properties;
 
 namespace TournamentAppDB.Model {
     public class Player {
@@ -15,7 +16,9 @@ namespace TournamentAppDB.Model {
         public int Points { get; set; }
 
         public Player() {
-            Decks = new List<Deck>();
+            Decks = new List<Deck> {
+                new Deck("Default deck", Resources.resPath + "\\card_nature icon.png") 
+            };
         }
 
         public Player(string name) : this(){

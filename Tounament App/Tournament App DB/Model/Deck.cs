@@ -6,6 +6,10 @@ using System.Text;
 
 namespace TournamentAppDB.Model {
     public class Deck {
+        private readonly int ARR_SIZE = 10;
+
+        private HearthstoneDBClient hDBClient;
+
         public List<Card> Cards { get; set; }
 
         //[Verifier(typeof(StringVerifier))]
@@ -15,8 +19,10 @@ namespace TournamentAppDB.Model {
         public string Path { get; set; }
 
         public Deck() {
+            hDBClient = new HearthstoneDBClient();
             Cards = new List<Card>();
-            
+
+            FillCards();
         }
 
         public Deck(string name, string path) : this() {
@@ -33,6 +39,24 @@ namespace TournamentAppDB.Model {
 
             if (!valid) 
                 throw new ArgumentException("The name of the deck is too long:" + Name);
+        }
+
+
+        (string name, string id)[] keysAux = {
+            ("Flame Lance", "AT_001"),
+            ("Effigy", "AT_002"),
+            ("Fallen Hero", "AT_003"),
+            ("Arcane Blast", "AT_004")
+        };
+
+        /// <summary>
+        /// Populate the list of cards with cards from the auxiliary container: keysAux.
+        /// </summary>
+        private void FillCards() {
+            foreach ((string name, string id) in keysAux) {
+                Card card = hDBClient.GetCard(name, id);
+                Cards.Add(card);
+            }
         }
     }
 

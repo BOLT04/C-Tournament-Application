@@ -34,11 +34,22 @@ namespace TounamentAppUI {
         private void InitializeCardsPanel() {
             Deck selDeck = Tr.Player.Decks.Find(d => d.Name.Equals(deckName));
 
-            /*foreach (Card c in selDeck.Cards)
-                cardsPanel.Controls.Add()*/
+            foreach (Card c in selDeck.Cards) {
+                //Make CardViewer instance.
+
+                //CardViewer cV = new CardViewer(c);
+                CardViewer cV = new CardViewer();
+                //Button b1 = new Button();
+                cardsPanel.Controls.Add(cV);
+                
+            }
         }
 
         private void ChoosingCardsForm_Load(object sender, EventArgs e) {
+
+        }
+
+        private void cardViewer1_Click(object sender, EventArgs e) {
 
         }
     }

@@ -58,6 +58,12 @@
     <Compile Include="BattleForm.Designer.cs">
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CardViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CardViewer.Designer.cs">
+      <DependentUpon>CardViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChoosingCardsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BattleForm.resx">
       <DependentUpon>BattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardViewer.resx">
+      <DependentUpon>CardViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChoosingCardsForm.resx">
       <DependentUpon>ChoosingCardsForm.cs</DependentUpon>

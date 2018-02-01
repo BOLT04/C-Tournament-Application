@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace TounamentAppUI
 
         }
 
-        private void playBtn_Click(object sender, EventArgs e) {
+        private void PlayBtn_Click(object sender, EventArgs e) {
             if (game == null)// In case it was already instanciated.
                 game = new Game();
             //game.start();
@@ -41,8 +42,18 @@ namespace TounamentAppUI
             new PlayForm().ShowAndHide(this);
         }
 
-        private void editCharacter_Click(object sender, EventArgs e) {
+        private void EditCharacter_Click(object sender, EventArgs e) {
             
+        }
+
+        private void PlayBtn_Paint(object sender, PaintEventArgs e)
+        {
+            LinearGradientBrush brush = new LinearGradientBrush(ClientRectangle, Color.Aqua, Color.Violet, LinearGradientMode.ForwardDiagonal);
+
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
+
+            e.Graphics.FillRectangle(brush, ClientRectangle);
+            e.Graphics.DrawString(playBtn.Text, new Font("Sitka Heading", 12F, FontStyle.Bold), drawBrush, new PointF(50, 50));
         }
     }
 }

@@ -25,9 +25,11 @@ namespace TounamentAppUI {
         public PictureBox[] deckImgs;
         public Label[] deckLabels;
 
-        public TournamentViewer(string name, Tournament tournament) {
+        public TournamentViewer() {
             InitializeComponent();
+        }
 
+        public TournamentViewer(string name, Tournament tournament) : this() {
             tournamentLabel.Text = name;  //Change the text on the upper label.
             Tr = tournament;
 
