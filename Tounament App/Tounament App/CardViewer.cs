@@ -47,23 +47,48 @@ namespace TounamentAppUI {
         public static readonly int WIDTH  = 100;
         public static readonly int HEIGHT = 90;
 
+        //Backgroung and rectangle colors.
+        public static readonly Color NORMAL_COLOR = Color.White;
+        public static readonly Color HOVER_COLOR = Color.SteelBlue;
+        public static readonly Color SELECTED_COLOR = Color.LightGreen;
+
+        //Text colors
+        public static readonly Color TEXT_COLOR1 = Color.Black;
+        public static readonly Color NUMBERS_COLOR1 = Color.Red;
+
+
+        private ChoosingCardsForm form;
+        private bool selected;
+
         public Card Card { get; set; }
         public PictureBox Img { get; set; }
         //public new Label Name { get; set; } //Temporary! An image should be displayed, not a label with the name of the card.
         public Label HpLabel { get; set; }
         public Label AtkLabel { get; set; }
         public Rectangle Rect { get; set; }
+
+        public Color MouseInColor { get; set; }
+        public Color NormalColor { get; set; }
         
         public CardViewer() {
             InitializeComponent();
 
+            Card = new Card();
+
+            HpLabel = new Label();
+            AtkLabel = new Label();
+
             //This is generated when adding a cardViewer in design.
             Location = new Point(3, 3);
             Size = new Size(WIDTH, HEIGHT);
+
+            NormalColor = NORMAL_COLOR;
+            MouseInColor = Color.Transparent;
         }
-        
-        public CardViewer(Card c) : this() {
+
+        public CardViewer(Card c, ChoosingCardsForm form) : this() {
             Card = c;
+            this.form = form;
 
             Text = c.Name;
             
@@ -74,6 +99,7 @@ namespace TounamentAppUI {
             AtkLabel = new Label {
                 Text = c.Attack.ToString()
             };
+
         } 
         
         protected override void OnPaint(PaintEventArgs pe) {
@@ -81,26 +107,55 @@ namespace TounamentAppUI {
 
             Rectangle rc = new Rectangle(ClientRectangle.X, ClientRectangle.Y, WIDTH, HEIGHT);
 
-            Brush wBrush = new SolidBrush(Color.White);
-            Brush dGBrush = new SolidBrush(Color.DarkGreen);
+            Brush normalBrush = new SolidBrush(NormalColor);
+            Brush txtBrush = new SolidBrush(TEXT_COLOR1);
+            Brush numBrush = new SolidBrush(NUMBERS_COLOR1);
             Brush ccBrush = new SolidBrush(Color.Violet);// Card class text brush.
 
-            g.FillRectangle(wBrush, rc);
+            g.FillRectangle(normalBrush, rc);
+            g.DrawRectangle(new Pen(MouseInColor, 5), rc);// Draw outline for the card.
 
-            g.DrawString(Text, new Font("Verdana", 8F), dGBrush, new RectangleF(rc.Left, rc.Top, rc.Width, rc.Height));
+            g.DrawString(Text, new Font("Verdana", 8F), txtBrush, new RectangleF(rc.Left, rc.Top, rc.Width, rc.Height));
             g.DrawString(Card.Type, new Font("Verdana", 10F), ccBrush, new RectangleF(rc.Left, rc.Top + 20, rc.Width, rc.Height));
 
             int statsY = rc.Bottom - 20;// y coordinate for Hp and Atk strings
 
             if (Card.Health > 0)
-                g.DrawString(Hp, new Font("Verdana", 10.20F), dGBrush, rc.Right -18, statsY);
+                g.DrawString(Hp, new Font("Verdana", 10.20F), numBrush, rc.Right -18, statsY);
             if (Card.Attack > 0)
-                g.DrawString(Atk, new Font("Verdana", 10.20F), dGBrush, rc.Left, statsY);
-
+                g.DrawString(Atk, new Font("Verdana", 10.20F), numBrush, rc.Left, statsY);
         }
 
         protected override void OnPaintBackground(PaintEventArgs pevent) {
             
+        }
+
+        protected override void OnMouseEnter(EventArgs e) {
+           // base.OnMouseEnter(e);
+            MouseInColor = HOVER_COLOR;
+            Invalidate();
+        }
+
+        protected override void OnMouseLeave(EventArgs e) {
+            //base.OnMouseLeave(e);
+            MouseInColor = Color.Transparent;
+            Invalidate();
+        }
+
+        protected override void OnMouseClick(MouseEventArgs e) {
+            //base.OnMouseClick(e);
+            if (!selected && form.SelectedCards < 4) {
+                NormalColor = SELECTED_COLOR;
+                form.SelectedCards++;
+                selected = true;
+            }
+            else if (form.SelectedCards != 4) {
+                NormalColor = NORMAL_COLOR;
+                form.SelectedCards--;
+                selected = false;
+            }
+
+            Invalidate();
         }
     }
 
@@ -153,17 +208,7 @@ namespace TounamentAppUI {
                 this.Text = "_";
                 text = this.Text;
             }
-            //method mouse enter
-            protected override void OnMouseEnter(EventArgs e) {
-                base.OnMouseEnter(e);
-                clr1 = color;
-                color = m_hovercolor;
-            }
-            //method mouse leave
-            protected override void OnMouseLeave(EventArgs e) {
-                base.OnMouseLeave(e);
-                color = clr1;
-            }
+           
 
             protected override void OnMouseDown(MouseEventArgs mevent) {
                 base.OnMouseDown(mevent);

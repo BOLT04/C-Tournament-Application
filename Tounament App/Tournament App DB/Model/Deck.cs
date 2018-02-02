@@ -46,7 +46,9 @@ namespace TournamentAppDB.Model {
             ("Flame Lance", "AT_001"),
             ("Effigy", "AT_002"),
             ("Fallen Hero", "AT_003"),
-            ("Arcane Blast", "AT_004")
+            ("Arcane Blast", "AT_004"),
+            ("Coldarra Drake", "AT_008"),
+            ("Rhonin", "AT_009")
         };
 
         /// <summary>

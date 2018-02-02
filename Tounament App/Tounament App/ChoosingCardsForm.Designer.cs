@@ -24,35 +24,39 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoosingCardsForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.topLabel = new System.Windows.Forms.Label();
             this.cardsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.vScrollBar = new System.Windows.Forms.VScrollBar();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // topLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Choose 4 Cards for the next battle";
+            this.topLabel.AutoSize = true;
+            this.topLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topLabel.Location = new System.Drawing.Point(175, 25);
+            this.topLabel.Name = "topLabel";
+            this.topLabel.Size = new System.Drawing.Size(381, 32);
+            this.topLabel.TabIndex = 0;
+            this.topLabel.Text = "Choose 4 Cards for the next battle";
             // 
             // cardsPanel
             // 
-            this.cardsPanel.Location = new System.Drawing.Point(31, 103);
+            this.cardsPanel.AutoScroll = true;
+            this.cardsPanel.Location = new System.Drawing.Point(26, 76);
             this.cardsPanel.Name = "cardsPanel";
             this.cardsPanel.Size = new System.Drawing.Size(670, 276);
             this.cardsPanel.TabIndex = 1;
             // 
-            // vScrollBar
+            // button1
             // 
-            this.vScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vScrollBar.Location = new System.Drawing.Point(685, 103);
-            this.vScrollBar.Name = "vScrollBar";
-            this.vScrollBar.Size = new System.Drawing.Size(16, 276);
-            this.vScrollBar.TabIndex = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(319, 373);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 32);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Continue";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // ChoosingCardsForm
             // 
@@ -60,9 +64,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(60)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(736, 417);
-            this.Controls.Add(this.vScrollBar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cardsPanel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.topLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -76,8 +80,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label topLabel;
         private System.Windows.Forms.FlowLayoutPanel cardsPanel;
-        private System.Windows.Forms.VScrollBar vScrollBar;
+        private System.Windows.Forms.Button button1;
     }
 }

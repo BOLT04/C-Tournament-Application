@@ -17,6 +17,8 @@ namespace TounamentAppUI {
         //Name of deck selected.
         private string deckName = Properties.Resources.defaultStr;
 
+        public int SelectedCards { get; set; }
+
         public ChoosingCardsForm() {
             InitializeComponent();
         }
@@ -35,7 +37,7 @@ namespace TounamentAppUI {
             Deck selDeck = Tr.Player.Decks.Find(d => d.Name.Equals(deckName));
 
             foreach (Card c in selDeck.Cards) {
-                CardViewer cV = new CardViewer(c);
+                CardViewer cV = new CardViewer(c, this);
                 cardsPanel.Controls.Add(cV);
             }
         }
@@ -46,6 +48,10 @@ namespace TounamentAppUI {
 
         private void cardViewer1_Click(object sender, EventArgs e) {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e) {
+            //new BattleForm(Tr, )
         }
     }
 }
