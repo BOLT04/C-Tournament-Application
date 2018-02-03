@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -143,15 +144,20 @@ namespace TounamentAppUI {
         }
 
         protected override void OnMouseClick(MouseEventArgs e) {
-            //base.OnMouseClick(e);
-            if (!selected && form.SelectedCards < 4) {
-                NormalColor = SELECTED_COLOR;
-                form.SelectedCards++;
-                selected = true;
-            }
-            else if (form.SelectedCards != 4) {
+            int count = form.SelectedCards.Count;
+            int idx = count - 1;
+
+            if (NormalColor.Equals(SELECTED_COLOR) && count == 4) {
                 NormalColor = NORMAL_COLOR;
-                form.SelectedCards--;
+                form.SelectedCards.Remove(Card);
+                selected = false;
+            } else if (!selected && count < 4) {// Add the card to the array.
+                NormalColor = SELECTED_COLOR;
+                form.SelectedCards.Add(Card);
+                selected = true;
+            } else if (count != 4) {
+                NormalColor = NORMAL_COLOR;
+                form.SelectedCards.Remove(Card);
                 selected = false;
             }
 

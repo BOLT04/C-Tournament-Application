@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,12 +13,14 @@ using System.Windows.Forms;
 
 namespace TounamentAppUI {
     public partial class ChoosingCardsForm : Form {
+        public static readonly int MAX_SELECTED_CARDS = 4;
 
         public Tournament Tr { get; set; }
         //Name of deck selected.
         private string deckName = Properties.Resources.defaultStr;
 
-        public int SelectedCards { get; set; }
+        //public int SelectedCards { get; set; }
+        public List<Card> SelectedCards { get; set; } = new List<Card>(MAX_SELECTED_CARDS);
 
         public ChoosingCardsForm() {
             InitializeComponent();
@@ -51,7 +54,10 @@ namespace TounamentAppUI {
         }
 
         private void Button1_Click(object sender, EventArgs e) {
-            //new BattleForm(Tr, )
+            if (SelectedCards.Count != MAX_SELECTED_CARDS)
+                MessageBox.Show("Please select " +MAX_SELECTED_CARDS+ " cards before continuing", "Error", MessageBoxButtons.OK,               MessageBoxIcon.Information);
+            else
+                new BattleForm(Tr).ShowAndHide(this);
         }
     }
 }
