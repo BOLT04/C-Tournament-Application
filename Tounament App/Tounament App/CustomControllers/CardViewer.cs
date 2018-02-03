@@ -13,6 +13,9 @@ using TournamentAppDB.Model;
 namespace TounamentAppUI.CustomControllers {
     public partial class CardViewer : Control {
 
+        /// <summary>
+        /// Displays the name of the card.
+        /// </summary>
         public new string Text { get; set; }
 
         [Category("Appearance")]
@@ -45,7 +48,7 @@ namespace TounamentAppUI.CustomControllers {
 
         public static readonly int INIT_X = 100;
         public static readonly int INIT_Y = 100;
-        public static readonly int WIDTH  = 100;
+        public static readonly int WIDTH = 100;
         public static readonly int HEIGHT = 90;
 
         //Backgroung and rectangle colors.
@@ -59,25 +62,20 @@ namespace TounamentAppUI.CustomControllers {
 
         protected bool selected;
 
-        public Card Card { get; set; }
+        public Card Card { get; set; } = new Card();
         public PictureBox Img { get; set; }
-        //public new Label Name { get; set; } //Temporary! An image should be displayed, not a label with the name of the card.
-        public Label HpLabel { get; set; }
-        public Label AtkLabel { get; set; }
+        public Label HpLabel { get; set; } = new Label();
+        public Label AtkLabel { get; set; } = new Label();
         public Rectangle Rect { get; set; }
 
         public Color MouseInColor { get; set; }
         public Color NormalColor { get; set; }
         
+
         public CardViewer() {
             InitializeComponent();
 
-            Card = new Card();
-
-            HpLabel = new Label();
-            AtkLabel = new Label();
-
-            //This is generated when adding a cardViewer in design.
+            //Define the location and size of this control to make it visible.
             Location = new Point(3, 3);
             Size = new Size(WIDTH, HEIGHT);
 
@@ -98,30 +96,36 @@ namespace TounamentAppUI.CustomControllers {
                 Text = c.Attack.ToString()
             };
 
-        } 
-        
+        }
+
+        public static readonly string FONT_FAMILY = "Verdana";
+
         protected override void OnPaint(PaintEventArgs pe) {
             Graphics g = pe.Graphics;
-
             Rectangle rc = new Rectangle(ClientRectangle.X, ClientRectangle.Y, WIDTH, HEIGHT);
 
             Brush normalBrush = new SolidBrush(NormalColor);
             Brush txtBrush = new SolidBrush(TEXT_COLOR1);
-            Brush numBrush = new SolidBrush(NUMBERS_COLOR1);
             Brush ccBrush = new SolidBrush(Color.Violet);// Card class text brush.
 
             g.FillRectangle(normalBrush, rc);
-            g.DrawRectangle(new Pen(MouseInColor, 5), rc);// Draw outline for the card.
 
-            g.DrawString(Text, new Font("Verdana", 8F), txtBrush, new RectangleF(rc.Left, rc.Top, rc.Width, rc.Height));
-            g.DrawString(Card.Type, new Font("Verdana", 10F), ccBrush, new RectangleF(rc.Left, rc.Top + 20, rc.Width, rc.Height));
+            byte penW = 5;
+            g.DrawRectangle(new Pen(MouseInColor, penW), rc);// Draw outline for the card.
 
-            int statsY = rc.Bottom - 20;// y coordinate for Hp and Atk strings
+            g.DrawString(Text, new Font(FONT_FAMILY, 8F), txtBrush, new RectangleF(rc.Left, rc.Top, rc.Width, rc.Height));
+            g.DrawString(Card.Type, new Font(FONT_FAMILY, 10F), ccBrush, new RectangleF(rc.Left, rc.Top + 20, rc.Width, rc.Height));
+
+            int statsY = rc.Bottom - 20,// y coordinate for Hp and Atk strings
+                xOffset = 18;
+
+            Brush numBrush = new SolidBrush(NUMBERS_COLOR1);
+            Font numFont = new Font(FONT_FAMILY, 10.20F);
 
             if (Card.Health > 0)
-                g.DrawString(Hp, new Font("Verdana", 10.20F), numBrush, rc.Right -18, statsY);
+                g.DrawString(Hp, numFont, numBrush, rc.Right -xOffset, statsY);
             if (Card.Attack > 0)
-                g.DrawString(Atk, new Font("Verdana", 10.20F), numBrush, rc.Left, statsY);
+                g.DrawString(Atk, numFont, numBrush, rc.Left, statsY);
         }
 
         protected override void OnPaintBackground(PaintEventArgs pevent) {
@@ -129,13 +133,11 @@ namespace TounamentAppUI.CustomControllers {
         }
 
         protected override void OnMouseEnter(EventArgs e) {
-           // base.OnMouseEnter(e);
             MouseInColor = HOVER_COLOR;
             Invalidate();
         }
 
         protected override void OnMouseLeave(EventArgs e) {
-            //base.OnMouseLeave(e);
             MouseInColor = Color.Transparent;
             Invalidate();
         }

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TournamentAppDB.Properties;
 
 namespace TournamentAppDB.Model.Users {
     public class Player : GameUser {
@@ -11,7 +10,13 @@ namespace TournamentAppDB.Model.Users {
         /// </summary>
         public int Points { get; set; }
 
-        public Player() : base() { }
+        public List<Deck> Decks { get; set; }
+
+        public Player() {
+            Decks = new List<Deck> {
+                new Deck("Default deck", Resources.resPath + "\\nature_deck_icon.png")
+            };
+        }
 
         public Player(string name) : base(name) { }
 

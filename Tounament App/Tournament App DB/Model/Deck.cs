@@ -1,18 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 
 namespace TournamentAppDB.Model {
-    public class Deck {
+    public class Deck : IEnumerable<Card>{
         private readonly int ARR_SIZE = 10;
 
         private HearthstoneDBClient hDBClient;
 
         public List<Card> Cards { get; set; }
 
-        //[Verifier(typeof(StringVerifier))]
         [StringLength(maximumLength:12)]
         public string Name { get; set; }
 
@@ -60,14 +58,13 @@ namespace TournamentAppDB.Model {
                 Cards.Add(card);
             }
         }
-    }
 
-    class VerifierAttribute : Attribute {
-        /// <summary>
-        /// Represents the type responsible to verify the value the user is trying to assign
-        /// to the member with this attribute.
-        /// </summary>
-        public Type VerifierType;
-        public VerifierAttribute(Type type) { VerifierType = type; }
+        public IEnumerator<Card> GetEnumerator() {
+            return Cards.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            return GetEnumerator();
+        }
     }
 }

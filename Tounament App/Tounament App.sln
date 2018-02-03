@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.0
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TounamentAppUI", "Tounament App\TounamentAppUI.csproj", "{49C235CE-6AC9-4664-8BF2-4BCC582ABF2F}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentAppDBTest", "TournamentAppDBTest\TournamentAppDBTest.csproj", "{A97F5520-B159-4427-8807-DCF104B2C0DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentAppUITest", "TournamentAppUITest\TournamentAppUITest.csproj", "{D11AB9EC-856F-487F-A616-C0B9A0813AFE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomComponents", "CardViewer\CustomComponents.csproj", "{0A1EE473-CE81-4337-A17A-858F5CFAA161}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,22 +87,6 @@ Global
 		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Release|x64.Build.0 = Release|Any CPU
 		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Release|x86.ActiveCfg = Release|Any CPU
 		{D11AB9EC-856F-487F-A616-C0B9A0813AFE}.Release|x86.Build.0 = Release|Any CPU
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|ARM.ActiveCfg = Debug|ARM
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|ARM.Build.0 = Debug|ARM
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|x64.ActiveCfg = Debug|x64
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|x64.Build.0 = Debug|x64
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|x86.ActiveCfg = Debug|x86
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Debug|x86.Build.0 = Debug|x86
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|ARM.ActiveCfg = Release|ARM
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|ARM.Build.0 = Release|ARM
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|x64.ActiveCfg = Release|x64
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|x64.Build.0 = Release|x64
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|x86.ActiveCfg = Release|x86
-		{0A1EE473-CE81-4337-A17A-858F5CFAA161}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,7 +17,6 @@ namespace TournamentAppDB {
         //The value is the card object that is associated with that name.
         private Dictionary<(string, string), Card> cards = new Dictionary<(string, string), Card>();
 
-
         public HearthstoneDBClient() {
             string body = client.DownloadString(API_URL);
 

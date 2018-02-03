@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
+
 using TournamentAppDB.Model.Users;
 using TournamentAppDB.Model;
 using TournamentAppDB.Model.Tournaments;
 
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TounamentAppUI {
@@ -22,6 +17,7 @@ namespace TounamentAppUI {
         /// Model side of this tournament viewer.
         /// </summary>
         public Tournament Tr { get; set; }
+        
         //Array that contains a reference to all deck images defined on the other part of this class.
         public PictureBox[] deckImgs;
         public Label[] deckLabels;
@@ -82,10 +78,13 @@ namespace TounamentAppUI {
             foreach (Deck deck in Tr.Player.Decks) {
                 deckImgs[i].ChangeImageTo(deck.Path);
                 deckLabels[i++].Text = deck.Name;
+                /*
+                DeckViewer deckV = new DeckViewer(deck);
+                playerListView.Items.Add(deckV);*/
             }
         }
 
-        private void playBtn_Click(object sender, EventArgs e) {
+        private void PlayBtn_Click(object sender, EventArgs e) {
             new ChoosingCardsForm(Tr, deckNameSelected).ShowAndHide(this);
         }
 

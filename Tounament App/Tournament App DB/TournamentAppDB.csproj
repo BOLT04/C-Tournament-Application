@@ -54,7 +54,6 @@
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Users\GameUser.cs" />
     <Compile Include="Model\Users\Player.cs" />
-    <Compile Include="Model\StringVerifier.cs" />
     <Compile Include="Model\Tournaments\Tournament.cs" />
     <Compile Include="Model\Tournaments\Tournament2.cs" />
     <Compile Include="Model\Tournaments\Tournament1.cs" />

@@ -118,7 +118,7 @@
             this.playBtn.TabIndex = 6;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = true;
-            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
+            this.playBtn.Click += new System.EventHandler(this.PlayBtn_Click);
             // 
             // enemiesListView
             // 
