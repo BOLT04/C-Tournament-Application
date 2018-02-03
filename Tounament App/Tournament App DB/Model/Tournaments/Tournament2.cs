@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TournamentAppDB.Model.Users;
 
 namespace TournamentAppDB.Model.Tournaments {
     public class Tournament2: Tournament {

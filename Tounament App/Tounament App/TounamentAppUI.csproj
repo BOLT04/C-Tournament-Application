@@ -58,10 +58,22 @@
     <Compile Include="BattleForm.Designer.cs">
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CardViewer.cs">
+    <Compile Include="CustomControllers\CardViewerBattle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CardViewer.Designer.cs">
+    <Compile Include="CustomControllers\CardViewerBattle.Designer.cs">
+      <DependentUpon>CardViewerBattle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControllers\CardViewerChoosing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControllers\CardViewerChoosing.Designer.cs">
+      <DependentUpon>CardViewerChoosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControllers\CardViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControllers\CardViewer.Designer.cs">
       <DependentUpon>CardViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="ChoosingCardsForm.cs">
@@ -89,7 +101,13 @@
     <EmbeddedResource Include="BattleForm.resx">
       <DependentUpon>BattleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CardViewer.resx">
+    <EmbeddedResource Include="CustomControllers\CardViewerBattle.resx">
+      <DependentUpon>CardViewerBattle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControllers\CardViewerChoosing.resx">
+      <DependentUpon>CardViewerChoosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControllers\CardViewer.resx">
       <DependentUpon>CardViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChoosingCardsForm.resx">

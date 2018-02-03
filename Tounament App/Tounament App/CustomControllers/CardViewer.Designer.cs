@@ -1,4 +1,4 @@
-﻿namespace TounamentAppUI {
+﻿namespace TounamentAppUI.CustomControllers {
     partial class CardViewer {
         /// <summary>
         /// Required designer variable.

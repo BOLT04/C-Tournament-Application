@@ -103,7 +103,7 @@
             // 
             this.playerListView.Location = new System.Drawing.Point(25, 78);
             this.playerListView.Name = "playerListView";
-            this.playerListView.Size = new System.Drawing.Size(214, 306);
+            this.playerListView.Size = new System.Drawing.Size(222, 306);
             this.playerListView.TabIndex = 5;
             this.playerListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -150,25 +150,25 @@
             // 
             this.deckImg1.Location = new System.Drawing.Point(37, 80);
             this.deckImg1.Name = "deckImg1";
-            this.deckImg1.Size = new System.Drawing.Size(73, 53);
+            this.deckImg1.Size = new System.Drawing.Size(80, 55);
             this.deckImg1.TabIndex = 9;
             this.deckImg1.TabStop = false;
             this.deckImg1.Click += new System.EventHandler(this.DeckImg1_Click);
             // 
             // deckImg2
             // 
-            this.deckImg2.Location = new System.Drawing.Point(153, 80);
+            this.deckImg2.Location = new System.Drawing.Point(156, 80);
             this.deckImg2.Name = "deckImg2";
-            this.deckImg2.Size = new System.Drawing.Size(74, 53);
+            this.deckImg2.Size = new System.Drawing.Size(80, 55);
             this.deckImg2.TabIndex = 10;
             this.deckImg2.TabStop = false;
             this.deckImg2.Click += new System.EventHandler(this.DeckImg2_Click);
             // 
             // deckImg4
             // 
-            this.deckImg4.Location = new System.Drawing.Point(153, 154);
+            this.deckImg4.Location = new System.Drawing.Point(156, 154);
             this.deckImg4.Name = "deckImg4";
-            this.deckImg4.Size = new System.Drawing.Size(74, 53);
+            this.deckImg4.Size = new System.Drawing.Size(80, 55);
             this.deckImg4.TabIndex = 11;
             this.deckImg4.TabStop = false;
             this.deckImg4.Click += new System.EventHandler(this.DeckImg4_Click);
@@ -177,7 +177,7 @@
             // 
             this.deckImg3.Location = new System.Drawing.Point(37, 154);
             this.deckImg3.Name = "deckImg3";
-            this.deckImg3.Size = new System.Drawing.Size(73, 53);
+            this.deckImg3.Size = new System.Drawing.Size(80, 55);
             this.deckImg3.TabIndex = 12;
             this.deckImg3.TabStop = false;
             this.deckImg3.Click += new System.EventHandler(this.DeckImg3_Click);
@@ -186,25 +186,25 @@
             // 
             this.deckImg5.Location = new System.Drawing.Point(37, 232);
             this.deckImg5.Name = "deckImg5";
-            this.deckImg5.Size = new System.Drawing.Size(73, 53);
+            this.deckImg5.Size = new System.Drawing.Size(80, 55);
             this.deckImg5.TabIndex = 13;
             this.deckImg5.TabStop = false;
             this.deckImg5.Click += new System.EventHandler(this.DeckImg5_Click);
             // 
             // deckImg6
             // 
-            this.deckImg6.Location = new System.Drawing.Point(153, 232);
+            this.deckImg6.Location = new System.Drawing.Point(156, 232);
             this.deckImg6.Name = "deckImg6";
-            this.deckImg6.Size = new System.Drawing.Size(74, 53);
+            this.deckImg6.Size = new System.Drawing.Size(80, 55);
             this.deckImg6.TabIndex = 14;
             this.deckImg6.TabStop = false;
             this.deckImg6.Click += new System.EventHandler(this.DeckImg6_Click);
             // 
             // deckImg8
             // 
-            this.deckImg8.Location = new System.Drawing.Point(153, 308);
+            this.deckImg8.Location = new System.Drawing.Point(156, 308);
             this.deckImg8.Name = "deckImg8";
-            this.deckImg8.Size = new System.Drawing.Size(74, 53);
+            this.deckImg8.Size = new System.Drawing.Size(80, 55);
             this.deckImg8.TabIndex = 15;
             this.deckImg8.TabStop = false;
             this.deckImg8.Click += new System.EventHandler(this.DeckImg8_Click);
@@ -270,7 +270,7 @@
             // 
             this.deckImg7.Location = new System.Drawing.Point(37, 308);
             this.deckImg7.Name = "deckImg7";
-            this.deckImg7.Size = new System.Drawing.Size(73, 53);
+            this.deckImg7.Size = new System.Drawing.Size(80, 55);
             this.deckImg7.TabIndex = 23;
             this.deckImg7.TabStop = false;
             this.deckImg7.Click += new System.EventHandler(this.DeckImg7_Click);

@@ -10,7 +10,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using TournamentAppDB.Model;
 
-namespace TounamentAppUI {
+namespace TounamentAppUI.CustomControllers {
     public partial class CardViewer : Control {
 
         public new string Text { get; set; }
@@ -57,9 +57,7 @@ namespace TounamentAppUI {
         public static readonly Color TEXT_COLOR1 = Color.Black;
         public static readonly Color NUMBERS_COLOR1 = Color.Red;
 
-
-        private ChoosingCardsForm form;
-        private bool selected;
+        protected bool selected;
 
         public Card Card { get; set; }
         public PictureBox Img { get; set; }
@@ -87,9 +85,8 @@ namespace TounamentAppUI {
             MouseInColor = Color.Transparent;
         }
 
-        public CardViewer(Card c, ChoosingCardsForm form) : this() {
+        public CardViewer(Card c) : this() {
             Card = c;
-            this.form = form;
 
             Text = c.Name;
             
@@ -140,27 +137,6 @@ namespace TounamentAppUI {
         protected override void OnMouseLeave(EventArgs e) {
             //base.OnMouseLeave(e);
             MouseInColor = Color.Transparent;
-            Invalidate();
-        }
-
-        protected override void OnMouseClick(MouseEventArgs e) {
-            int count = form.SelectedCards.Count;
-            int idx = count - 1;
-
-            if (NormalColor.Equals(SELECTED_COLOR) && count == 4) {
-                NormalColor = NORMAL_COLOR;
-                form.SelectedCards.Remove(Card);
-                selected = false;
-            } else if (!selected && count < 4) {// Add the card to the array.
-                NormalColor = SELECTED_COLOR;
-                form.SelectedCards.Add(Card);
-                selected = true;
-            } else if (count != 4) {
-                NormalColor = NORMAL_COLOR;
-                form.SelectedCards.Remove(Card);
-                selected = false;
-            }
-
             Invalidate();
         }
     }

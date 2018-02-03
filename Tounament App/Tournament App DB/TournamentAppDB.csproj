@@ -50,9 +50,10 @@
     <Compile Include="HearthstoneDBClient.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\Deck.cs" />
-    <Compile Include="Model\Enemy.cs" />
+    <Compile Include="Model\Users\Enemy.cs" />
     <Compile Include="Model\Game.cs" />
-    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Users\GameUser.cs" />
+    <Compile Include="Model\Users\Player.cs" />
     <Compile Include="Model\StringVerifier.cs" />
     <Compile Include="Model\Tournaments\Tournament.cs" />
     <Compile Include="Model\Tournaments\Tournament2.cs" />
@@ -73,5 +74,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

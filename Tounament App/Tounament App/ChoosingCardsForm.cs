@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TournamentAppDB.Model.Tournaments;
 using TournamentAppDB.Model;
+using TounamentAppUI.CustomControllers;
 using System.Windows.Forms;
 
 namespace TounamentAppUI {
@@ -19,7 +20,6 @@ namespace TounamentAppUI {
         //Name of deck selected.
         private string deckName = Properties.Resources.defaultStr;
 
-        //public int SelectedCards { get; set; }
         public List<Card> SelectedCards { get; set; } = new List<Card>(MAX_SELECTED_CARDS);
 
         public ChoosingCardsForm() {
@@ -40,7 +40,7 @@ namespace TounamentAppUI {
             Deck selDeck = Tr.Player.Decks.Find(d => d.Name.Equals(deckName));
 
             foreach (Card c in selDeck.Cards) {
-                CardViewer cV = new CardViewer(c, this);
+                CardViewerChoosing cV = new CardViewerChoosing(c, this);
                 cardsPanel.Controls.Add(cV);
             }
         }
@@ -57,7 +57,7 @@ namespace TounamentAppUI {
             if (SelectedCards.Count != MAX_SELECTED_CARDS)
                 MessageBox.Show("Please select " +MAX_SELECTED_CARDS+ " cards before continuing", "Error", MessageBoxButtons.OK,               MessageBoxIcon.Information);
             else
-                new BattleForm(Tr).ShowAndHide(this);
+                new BattleForm(Tr, SelectedCards).ShowAndHide(this);
         }
     }
 }

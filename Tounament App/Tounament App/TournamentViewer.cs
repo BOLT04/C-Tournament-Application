@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using TournamentAppDB.Model.Users;
 using TournamentAppDB.Model;
 using TournamentAppDB.Model.Tournaments;
 

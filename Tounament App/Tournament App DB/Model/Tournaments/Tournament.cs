@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TournamentAppDB.Model.Users;
 
 namespace TournamentAppDB.Model.Tournaments {
     public abstract class Tournament {
