@@ -21,13 +21,14 @@ namespace TounamentAppUI.CustomControllers {
         [Category("Appearance")]
         public string Atk {
             get {
-                return AtkLabel.Text;
+                return Card.Attack.ToString();
             }
 
             set {
-                if (value.Equals(AtkLabel.Text))
+                if (value.Equals(Card.Attack.ToString()))
                     return;
-                AtkLabel.Text = value;
+
+                Card.Attack = int.Parse(value);
                 Invalidate();
             }
         }
@@ -35,13 +36,14 @@ namespace TounamentAppUI.CustomControllers {
         [Category("Appearance")]
         public string Hp {
             get {
-                return HpLabel.Text;
+                return Card.Health.ToString();
             }
 
             set {
-                if (value.Equals(HpLabel.Text))
+                if (value.Equals(Card.Health.ToString()))
                     return;
-                HpLabel.Text = value;
+
+                Card.Health = int.Parse(value);
                 Invalidate();
             }
         }
@@ -52,8 +54,8 @@ namespace TounamentAppUI.CustomControllers {
         public static readonly int HEIGHT = 90;
 
         //Backgroung and rectangle colors.
-        public static readonly Color NORMAL_COLOR = Color.White;
         public static readonly Color HOVER_COLOR = Color.SteelBlue;
+        public static readonly Color NORMAL_COLOR = Color.White;
         public static readonly Color SELECTED_COLOR = Color.LightGreen;
 
         //Text colors
@@ -64,8 +66,6 @@ namespace TounamentAppUI.CustomControllers {
 
         public Card Card { get; set; } = new Card();
         public PictureBox Img { get; set; }
-        public Label HpLabel { get; set; } = new Label();
-        public Label AtkLabel { get; set; } = new Label();
         public Rectangle Rect { get; set; }
 
         public Color MouseInColor { get; set; }
@@ -88,14 +88,8 @@ namespace TounamentAppUI.CustomControllers {
 
             Text = c.Name;
             
-            HpLabel = new Label {
-                Text = c.Health.ToString()
-            };
-
-            AtkLabel = new Label {
-                Text = c.Attack.ToString()
-            };
-
+            Hp = c.Health.ToString();
+            Atk = c.Attack.ToString();
         }
 
         public static readonly string FONT_FAMILY = "Verdana";

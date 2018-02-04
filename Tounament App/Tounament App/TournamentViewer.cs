@@ -14,11 +14,11 @@ namespace TounamentAppUI {
                                                  // Doesn't make much sense for the constant to be in the tournament Viewer.
 
         /// <summary>
-        /// Model side of this tournament viewer.
+        /// Gets or sets model side of this tournament viewer.
         /// </summary>
         public Tournament Tr { get; set; }
         
-        //Array that contains a reference to all deck images defined on the other part of this class.
+        // Array that contains a reference to all deck images defined on the other part of this class.
         public PictureBox[] deckImgs;
         public Label[] deckLabels;
 
@@ -27,7 +27,7 @@ namespace TounamentAppUI {
         }
 
         public TournamentViewer(string name, Tournament tournament) : this() {
-            tournamentLabel.Text = name;  //Change the text on the upper label.
+            this.tournamentLabel.Text = name;  // Change the text on the upper label.
             Tr = tournament;
 
             /*Define and initialize the deckImgs and deckLabels arrays.*/

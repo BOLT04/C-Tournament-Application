@@ -10,17 +10,17 @@ namespace TournamentAppDB.Model.Users {
         /// </summary>
         public int Points { get; set; }
 
-        public List<Deck> Decks { get; set; }
-
-        public Player() {
-            Decks = new List<Deck> {
+        public List<Deck> Decks { get; set; } = new List<Deck> {
                 new Deck("Default deck", Resources.resPath + "\\nature_deck_icon.png")
-            };
-        }
+        };
 
-        public Player(string name) : base(name) { }
+        public Player() { }
 
-        public Player(string name, List<Deck> decks) : this(name) {
+        public Player(string name)
+            : base(name) { }
+
+        public Player(string name, List<Deck> decks)
+            : this(name) {
             Decks = decks;
         }
     }

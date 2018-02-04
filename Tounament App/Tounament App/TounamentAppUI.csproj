@@ -58,6 +58,13 @@
     <Compile Include="BattleForm.Designer.cs">
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\BattleController.cs" />
+    <Compile Include="CustomControllers\CardViewerEnemy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControllers\CardViewerEnemy.Designer.cs">
+      <DependentUpon>CardViewerEnemy.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControllers\CardViewerBattle.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -101,6 +108,9 @@
     <EmbeddedResource Include="BattleForm.resx">
       <DependentUpon>BattleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControllers\CardViewerEnemy.resx">
+      <DependentUpon>CardViewerEnemy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControllers\CardViewerBattle.resx">
       <DependentUpon>CardViewerBattle.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +139,7 @@
     <EmbeddedResource Include="TournamentViewer.resx">
       <DependentUpon>TournamentViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,6 +164,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\vs_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,10 +41,10 @@ namespace TournamentAppDB.Model {
 
 
         (string name, string id)[] keysAux = {
-            ("Flame Lance", "AT_001"),
-            ("Effigy", "AT_002"),
+            ("Shadowfiend", "AT_014"),
+            ("Holy Champion", "AT_011"),
             ("Fallen Hero", "AT_003"),
-            ("Arcane Blast", "AT_004"),
+            ("Ram Wrangler", "AT_010"),
             ("Coldarra Drake", "AT_008"),
             ("Rhonin", "AT_009")
         };

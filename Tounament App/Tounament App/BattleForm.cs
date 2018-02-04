@@ -11,6 +11,7 @@ using TournamentAppDB.Model.Tournaments;
 using TournamentAppDB.Model;
 using TounamentAppUI.CustomControllers;
 using TournamentAppDB.Model.Users;
+using TounamentAppUI.Controller;
 
 namespace TounamentAppUI {
     public partial class BattleForm : Form {
@@ -19,13 +20,16 @@ namespace TounamentAppUI {
         public List<Card> SelectedCards { get; set; }
         private Enemy currEnemy;
 
+        private BattleController controller;
+
         public BattleForm() {
             InitializeComponent();
+
+            controller = new BattleController(this);
         }
 
-        public BattleForm(Tournament tr, List<Card> selectedCards) {
-            InitializeComponent();
-
+        public BattleForm(Tournament tr, List<Card> selectedCards) 
+            : this() {
             Tr = tr;
             SelectedCards = selectedCards;
             currEnemy = Tr.Enemies[0];
@@ -36,14 +40,14 @@ namespace TounamentAppUI {
 
         private void InitializePlayerCardsPanel() {
             foreach (Card c in SelectedCards) {
-                CardViewerBattle cV = new CardViewerBattle(c);
+                CardViewerBattle cV = new CardViewerBattle(c, this);
                 playerPanel.Controls.Add(cV);
             }
 
         }
 
         private void InitializeEnemyCardsPanel() {
-            //Auxiliary variables.
+            // Auxiliary variables.
             int size = ChoosingCardsForm.MAX_SELECTED_CARDS;
             Random rand = new Random();
             List<Card> usedCards = new List<Card>(size);
@@ -58,9 +62,26 @@ namespace TounamentAppUI {
 
                 usedCards.Add(c);
 
-                CardViewerBattle cV = new CardViewerBattle(c);
-                playerPanel.Controls.Add(cV);
+                CardViewerEnemy cV = new CardViewerEnemy(c, this);
+                enemyPanel.Controls.Add(cV);
+                
             }
+        }
+
+        public void OnClickPlayerCard(CardViewerBattle cV) {
+            controller.OnClickPlayerCard(cV);
+        }
+
+        public void OnClickEnemyCard(CardViewerEnemy cV) {
+            controller.OnClickEnemyCard(cV);
+        }
+
+        public Control.ControlCollection GetControlsOfPlayerPanel() {
+            return playerPanel.Controls;
+        }
+
+        public Control.ControlCollection GetControlsOfEnemyPanel() {
+            return enemyPanel.Controls;
         }
     }
 }
