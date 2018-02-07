@@ -9,6 +9,7 @@ namespace TournamentAppDB.Model {
 
         private HearthstoneDBClient hDBClient;
 
+        public int Count { get { return Cards.Count; } }
         public List<Card> Cards { get; set; }
 
         [StringLength(maximumLength:12)]

@@ -20,10 +20,14 @@ namespace TounamentAppUI {
         //Name of deck selected.
         private string deckName = Properties.Resources.defaultStr;
 
-        public List<Card> SelectedCards { get; set; } = new List<Card>(MAX_SELECTED_CARDS);
+        public List<Card> SelectedCards { get; set; }
+        public List<Card> UnSelectedCards { get; set; } 
 
         public ChoosingCardsForm() {
             InitializeComponent();
+
+            SelectedCards = new List<Card>(MAX_SELECTED_CARDS);
+            UnSelectedCards = new List<Card>(Tr.Player.Decks.Count - MAX_SELECTED_CARDS);
         }
 
         public ChoosingCardsForm(Tournament tr, string deckName) : this(){
@@ -57,7 +61,7 @@ namespace TounamentAppUI {
             if (SelectedCards.Count != MAX_SELECTED_CARDS)
                 MessageBox.Show("Please select " +MAX_SELECTED_CARDS+ " cards before continuing", "Error", MessageBoxButtons.OK,               MessageBoxIcon.Information);
             else
-                new BattleForm(Tr, SelectedCards).ShowAndHide(this);
+                new BattleForm(Tr, SelectedCards, UnSelectedCards).ShowAndHide(this);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using TournamentAppDB.Model.Users;
 using TournamentAppDB.Model;
 using TournamentAppDB.Model.Tournaments;
+using TounamentAppUI.CustomControllers;
 
 using System.Windows.Forms;
 
@@ -22,21 +23,26 @@ namespace TounamentAppUI {
         public PictureBox[] deckImgs;
         public Label[] deckLabels;
 
+        public BindingSource deckBinding;
+
         public TournamentViewer() {
             InitializeComponent();
+
+            deckBinding.DataSource = Tr.Player.Decks;
+            //playerListView.Da = deckBinding;
         }
 
         public TournamentViewer(string name, Tournament tournament) : this() {
-            this.tournamentLabel.Text = name;  // Change the text on the upper label.
+            tournamentLabel.Text = name;  // Change the text on the upper label.
             Tr = tournament;
 
             /*Define and initialize the deckImgs and deckLabels arrays.*/
-            //TODO: Maybe instead of having these two arrays, make a new class that represents one DeckViewer
+            // TODO: Maybe instead of having these two arrays, make a new class that represents one DeckViewer
             //     which has its image and label!
             deckImgs = new PictureBox[DECK_MAX_NUMBER];
             deckLabels = new Label[DECK_MAX_NUMBER];
 
-            //TODO: Make this code better, its too hard-coded!! 
+            // TODO: Make this code better, its too hard-coded!!
             // Maybe take out the already defined deckImg's and make your own with code as needed!
             deckImgs[0] = deckImg1;
             deckImgs[1] = deckImg2;
@@ -76,11 +82,8 @@ namespace TounamentAppUI {
         private void InitializePlayerListView() {
             int i = 0;
             foreach (Deck deck in Tr.Player.Decks) {
-                deckImgs[i].ChangeImageTo(deck.Path);
-                deckLabels[i++].Text = deck.Name;
-                /*
                 DeckViewer deckV = new DeckViewer(deck);
-                playerListView.Items.Add(deckV);*/
+                playerListView.Controls.Add(deckV);
             }
         }
 

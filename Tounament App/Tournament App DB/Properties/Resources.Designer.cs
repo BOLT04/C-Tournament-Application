@@ -61,6 +61,15 @@ namespace TournamentAppDB.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 4.
+        /// </summary>
+        public static string MAX_HAND_CARDS {
+            get {
+                return ResourceManager.GetString("MAX_HAND_CARDS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to C:\Users\JoséDavid\source\repos\C-Tournament-Application\Tounament App\Tounament App\res.
         /// </summary>
         public static string resPath {

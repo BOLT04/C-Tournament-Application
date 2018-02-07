@@ -59,6 +59,12 @@
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\BattleController.cs" />
+    <Compile Include="CustomControllers\DeckViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControllers\DeckViewer.Designer.cs">
+      <DependentUpon>DeckViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControllers\CardViewerEnemy.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BattleForm.resx">
       <DependentUpon>BattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControllers\DeckViewer.resx">
+      <DependentUpon>DeckViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControllers\CardViewerEnemy.resx">
       <DependentUpon>CardViewerEnemy.cs</DependentUpon>

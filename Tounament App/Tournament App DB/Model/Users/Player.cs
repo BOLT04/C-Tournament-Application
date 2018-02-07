@@ -23,5 +23,9 @@ namespace TournamentAppDB.Model.Users {
             : this(name) {
             Decks = decks;
         }
+
+        public static global::TounamentAppUI.CustomControllers.CardViewer GetRandomCard(List<Card> selectedCards) {
+            throw new NotImplementedException();
+        }
     }
 }

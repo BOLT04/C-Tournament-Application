@@ -29,6 +29,7 @@
             this.playerPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.enemyPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.battleImg = new System.Windows.Forms.PictureBox();
+            this.turnLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.battleImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,12 +75,22 @@
             this.battleImg.TabIndex = 6;
             this.battleImg.TabStop = false;
             // 
+            // turnLabel
+            // 
+            this.turnLabel.AutoSize = true;
+            this.turnLabel.Location = new System.Drawing.Point(361, 283);
+            this.turnLabel.Name = "turnLabel";
+            this.turnLabel.Size = new System.Drawing.Size(43, 17);
+            this.turnLabel.TabIndex = 7;
+            this.turnLabel.Text = "label2";
+            // 
             // BattleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(60)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(736, 417);
+            this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.battleImg);
             this.Controls.Add(this.enemyPanel);
             this.Controls.Add(this.playerPanel);
@@ -103,5 +114,6 @@
         private System.Windows.Forms.FlowLayoutPanel playerPanel;
         private System.Windows.Forms.FlowLayoutPanel enemyPanel;
         private System.Windows.Forms.PictureBox battleImg;
+        private System.Windows.Forms.Label turnLabel;
     }
 }
