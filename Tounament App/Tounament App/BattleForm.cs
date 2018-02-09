@@ -26,7 +26,6 @@ namespace TounamentAppUI {
 
         public Tournament Tr { get; set; }
 
-        public List<Card> SelectedCards { get; set; }
         public List<Card> UnSelectedCards { get; set; }
 
         public Enemy CurrEnemy { get; set; }
@@ -41,7 +40,8 @@ namespace TounamentAppUI {
 
         public BattleForm(Tournament tr, List<Card> selectedCards, List<Card> unSelectedCards) : this() {
             Tr = tr;
-            SelectedCards = selectedCards;
+            Tr.Player.Hand = selectedCards;
+
             UnSelectedCards = unSelectedCards;
 
             CurrEnemy = Tr.Enemies[0];
@@ -57,31 +57,11 @@ namespace TounamentAppUI {
         }
 
         private void InitializePlayerCardsPanel() {
-            foreach (Card c in SelectedCards) 
+            foreach (Card c in Tr.Player.Hand) 
                 playerPanel.Controls.Add(new CardViewerBattle(c, this));
         }
 
         private void InitializeEnemyCardsPanel() {
-            // Auxiliary variables.
-            /*int size = ChoosingCardsForm.MAX_SELECTED_CARDS;
-            Random rand = new Random();
-            List<Card> usedCards = new List<Card>(size);
-            List<Card> cards = CurrEnemy.Deck.Cards;
-
-            Card c;
-            for (int i = 0, idx; i < size; ++i) {
-                do {
-                    idx = rand.Next(cards.Count);
-                    c = cards.ElementAt(idx);
-                } while (usedCards.Contains(c));
-
-                usedCards.Add(c);
-
-                CardViewerEnemy cV = new CardViewerEnemy(c, this);
-                enemyPanel.Controls.Add(cV);
-                
-            }*/
-
             foreach (Card c in CurrEnemy.Hand) 
                 enemyPanel.Controls.Add(new CardViewerEnemy(c, this));
         }

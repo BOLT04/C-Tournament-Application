@@ -42,11 +42,14 @@ namespace TounamentAppUI.Controller {
 
         private void StartEnemyTurn() {
             battleF.ChangeToEnemyTurn();// Moves the turn label and sets the according text.
-
+            /*
             Card enemyCard = enemy.GetRandomCard(battleF.GetControlsOfEnemyPanel());
 
             
             currPlayerCard = Player.GetRandomCard(battleF.SelectedCards);
+            ...
+            onTurnEnd();
+             */
         }
 
         private bool SelectedPlayerCard;
@@ -96,7 +99,7 @@ namespace TounamentAppUI.Controller {
             if (newEnHP <= 0) {
                 // Remove card view and its model.
                 battleF.GetControlsOfEnemyPanel().Remove(enCardView);
-                battleF.SelectedCards.Remove(plCard);
+                battleF.Tr.Player.Hand.Remove(plCard);
             }
         }
 

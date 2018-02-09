@@ -19,11 +19,9 @@ namespace TournamentAppUITest {
             InitializeComponent();
         }
 
-        private static Deck deck1 = new Deck("First deck", Resources.resPath + "\\card_nature icon.png");
-        private static Deck deck2 = new Deck("Secong deck", Resources.resPath + "\\card_nature icon.png");
-        private static Deck deck3 = new Deck("Awesome deck", Resources.resPath + "\\card_nature icon.png");
-        /*private static Deck wrongDeckName = new Deck("Name exceeds Max deck",
-            Resources.resPath + "\\card_nature icon.png");*/
+        private static Deck deck1 = new Deck("First deck", Resources.resPath + "\\nature_deck_icon.png");
+        private static Deck deck2 = new Deck("Second deck", Resources.resPath + "\\nature_deck_icon.png");
+        private static Deck deck3 = new Deck("Awesome deck", Resources.resPath + "\\light_deck_icon.png");
 
         private void TestBtn1_Click(object sender, EventArgs e) {
             List<Deck> decks = new List<Deck> {
@@ -42,8 +40,8 @@ namespace TournamentAppUITest {
                 deck2
             };
 
-            Tournament tr = new Tournament1("Test Player 1", decks);
-            TournamentViewer trV = new TournamentViewer("Test Tournament 1", tr);
+            Tournament tr = new Tournament1("Test Player 2", decks);
+            TournamentViewer trV = new TournamentViewer("Test Tournament 2", tr);
 
             trV.Show();
         }
@@ -55,8 +53,8 @@ namespace TournamentAppUITest {
                 deck3
             };
 
-            Tournament tr = new Tournament1("Test Player 1", decks);
-            TournamentViewer trV = new TournamentViewer("Test Tournament 1", tr);
+            Tournament tr = new Tournament1("Test Player 3", decks);
+            TournamentViewer trV = new TournamentViewer("Test Tournament 3", tr);
 
             trV.Show();
         }

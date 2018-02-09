@@ -18,49 +18,19 @@ namespace TounamentAppUI {
         /// Gets or sets model side of this tournament viewer.
         /// </summary>
         public Tournament Tr { get; set; }
-        
-        // Array that contains a reference to all deck images defined on the other part of this class.
-        public PictureBox[] deckImgs;
-        public Label[] deckLabels;
 
-        public BindingSource deckBinding;
+        //public BindingSource deckBinding;
 
         public TournamentViewer() {
             InitializeComponent();
 
-            deckBinding.DataSource = Tr.Player.Decks;
+            //deckBinding.DataSource = Tr.Player.Decks;
             //playerListView.Da = deckBinding;
         }
 
         public TournamentViewer(string name, Tournament tournament) : this() {
             tournamentLabel.Text = name;  // Change the text on the upper label.
             Tr = tournament;
-
-            /*Define and initialize the deckImgs and deckLabels arrays.*/
-            // TODO: Maybe instead of having these two arrays, make a new class that represents one DeckViewer
-            //     which has its image and label!
-            deckImgs = new PictureBox[DECK_MAX_NUMBER];
-            deckLabels = new Label[DECK_MAX_NUMBER];
-
-            // TODO: Make this code better, its too hard-coded!!
-            // Maybe take out the already defined deckImg's and make your own with code as needed!
-            deckImgs[0] = deckImg1;
-            deckImgs[1] = deckImg2;
-            deckImgs[2] = deckImg3;
-            deckImgs[3] = deckImg4;
-            deckImgs[4] = deckImg5;
-            deckImgs[5] = deckImg6;
-            deckImgs[6] = deckImg7;
-            deckImgs[7] = deckImg8;
-
-            deckLabels[0] = deck1Name;
-            deckLabels[1] = deck2Name;
-            deckLabels[2] = deck3Name;
-            deckLabels[3] = deck4Name;
-            deckLabels[4] = deck5Name;
-            deckLabels[5] = deck6Name;
-            deckLabels[6] = deck7Name;
-            deckLabels[7] = deck8Name;
 
             InitializeEnemyListView();
 
@@ -80,49 +50,17 @@ namespace TounamentAppUI {
         }
 
         private void InitializePlayerListView() {
-            int i = 0;
+            DeckViewer deckV;
             foreach (Deck deck in Tr.Player.Decks) {
-                DeckViewer deckV = new DeckViewer(deck);
-                playerListView.Controls.Add(deckV);
+                deckV = new DeckViewer(deck, this);
+                playerPanel.Controls.Add(deckV);
             }
         }
 
+        public string DeckNameSelected { get; set; }
+
         private void PlayBtn_Click(object sender, EventArgs e) {
-            new ChoosingCardsForm(Tr, deckNameSelected).ShowAndHide(this);
-        }
-
-        private string deckNameSelected;
-
-        private void DeckImg1_Click(object sender, EventArgs e) {
-            deckNameSelected = deck1Name.Text;
-        }
-
-        private void DeckImg2_Click(object sender, EventArgs e) {
-            deckNameSelected = deck2Name.Text;
-        }
-
-        private void DeckImg3_Click(object sender, EventArgs e) {
-            deckNameSelected = deck3Name.Text;
-        }
-
-        private void DeckImg4_Click(object sender, EventArgs e) {
-            deckNameSelected = deck4Name.Text;
-        }
-
-        private void DeckImg5_Click(object sender, EventArgs e) {
-            deckNameSelected = deck5Name.Text;
-        }
-
-        private void DeckImg6_Click(object sender, EventArgs e) {
-            deckNameSelected = deck6Name.Text;
-        }
-
-        private void DeckImg7_Click(object sender, EventArgs e) {
-            deckNameSelected = deck7Name.Text;
-        }
-
-        private void DeckImg8_Click(object sender, EventArgs e) {
-            deckNameSelected = deck8Name.Text;
+            new ChoosingCardsForm(Tr, DeckNameSelected).ShowAndHide(this);
         }
     }
 

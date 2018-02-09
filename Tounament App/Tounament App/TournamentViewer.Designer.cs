@@ -28,36 +28,12 @@
             this.backBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.playerListView = new System.Windows.Forms.ListView();
             this.playBtn = new System.Windows.Forms.Button();
             this.enemiesListView = new System.Windows.Forms.ListView();
             this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tournamentLabel = new System.Windows.Forms.Label();
-            this.deckImg1 = new System.Windows.Forms.PictureBox();
-            this.deckImg2 = new System.Windows.Forms.PictureBox();
-            this.deckImg4 = new System.Windows.Forms.PictureBox();
-            this.deckImg3 = new System.Windows.Forms.PictureBox();
-            this.deckImg5 = new System.Windows.Forms.PictureBox();
-            this.deckImg6 = new System.Windows.Forms.PictureBox();
-            this.deckImg8 = new System.Windows.Forms.PictureBox();
-            this.deck1Name = new System.Windows.Forms.Label();
-            this.deck2Name = new System.Windows.Forms.Label();
-            this.deck4Name = new System.Windows.Forms.Label();
-            this.deck3Name = new System.Windows.Forms.Label();
-            this.deck6Name = new System.Windows.Forms.Label();
-            this.deck5Name = new System.Windows.Forms.Label();
-            this.deck8Name = new System.Windows.Forms.Label();
-            this.deckImg7 = new System.Windows.Forms.PictureBox();
-            this.deck7Name = new System.Windows.Forms.Label();
+            this.playerPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.vsImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg7)).BeginInit();
             this.SuspendLayout();
             // 
             // vsImg
@@ -99,14 +75,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Enemies";
             // 
-            // playerListView
-            // 
-            this.playerListView.Location = new System.Drawing.Point(25, 78);
-            this.playerListView.Name = "playerListView";
-            this.playerListView.Size = new System.Drawing.Size(222, 306);
-            this.playerListView.TabIndex = 5;
-            this.playerListView.UseCompatibleStateImageBehavior = false;
-            // 
             // playBtn
             // 
             this.playBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,142 +114,14 @@
             this.tournamentLabel.TabIndex = 8;
             this.tournamentLabel.Text = "Tournament";
             // 
-            // deckImg1
+            // playerPanel
             // 
-            this.deckImg1.Location = new System.Drawing.Point(37, 80);
-            this.deckImg1.Name = "deckImg1";
-            this.deckImg1.Size = new System.Drawing.Size(80, 55);
-            this.deckImg1.TabIndex = 9;
-            this.deckImg1.TabStop = false;
-            this.deckImg1.Click += new System.EventHandler(this.DeckImg1_Click);
-            // 
-            // deckImg2
-            // 
-            this.deckImg2.Location = new System.Drawing.Point(156, 80);
-            this.deckImg2.Name = "deckImg2";
-            this.deckImg2.Size = new System.Drawing.Size(80, 55);
-            this.deckImg2.TabIndex = 10;
-            this.deckImg2.TabStop = false;
-            this.deckImg2.Click += new System.EventHandler(this.DeckImg2_Click);
-            // 
-            // deckImg4
-            // 
-            this.deckImg4.Location = new System.Drawing.Point(156, 154);
-            this.deckImg4.Name = "deckImg4";
-            this.deckImg4.Size = new System.Drawing.Size(80, 55);
-            this.deckImg4.TabIndex = 11;
-            this.deckImg4.TabStop = false;
-            this.deckImg4.Click += new System.EventHandler(this.DeckImg4_Click);
-            // 
-            // deckImg3
-            // 
-            this.deckImg3.Location = new System.Drawing.Point(37, 154);
-            this.deckImg3.Name = "deckImg3";
-            this.deckImg3.Size = new System.Drawing.Size(80, 55);
-            this.deckImg3.TabIndex = 12;
-            this.deckImg3.TabStop = false;
-            this.deckImg3.Click += new System.EventHandler(this.DeckImg3_Click);
-            // 
-            // deckImg5
-            // 
-            this.deckImg5.Location = new System.Drawing.Point(37, 232);
-            this.deckImg5.Name = "deckImg5";
-            this.deckImg5.Size = new System.Drawing.Size(80, 55);
-            this.deckImg5.TabIndex = 13;
-            this.deckImg5.TabStop = false;
-            this.deckImg5.Click += new System.EventHandler(this.DeckImg5_Click);
-            // 
-            // deckImg6
-            // 
-            this.deckImg6.Location = new System.Drawing.Point(156, 232);
-            this.deckImg6.Name = "deckImg6";
-            this.deckImg6.Size = new System.Drawing.Size(80, 55);
-            this.deckImg6.TabIndex = 14;
-            this.deckImg6.TabStop = false;
-            this.deckImg6.Click += new System.EventHandler(this.DeckImg6_Click);
-            // 
-            // deckImg8
-            // 
-            this.deckImg8.Location = new System.Drawing.Point(156, 308);
-            this.deckImg8.Name = "deckImg8";
-            this.deckImg8.Size = new System.Drawing.Size(80, 55);
-            this.deckImg8.TabIndex = 15;
-            this.deckImg8.TabStop = false;
-            this.deckImg8.Click += new System.EventHandler(this.DeckImg8_Click);
-            // 
-            // deck1Name
-            // 
-            this.deck1Name.AutoSize = true;
-            this.deck1Name.Location = new System.Drawing.Point(34, 134);
-            this.deck1Name.Name = "deck1Name";
-            this.deck1Name.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.deck1Name.Size = new System.Drawing.Size(0, 17);
-            this.deck1Name.TabIndex = 16;
-            // 
-            // deck2Name
-            // 
-            this.deck2Name.AutoSize = true;
-            this.deck2Name.Location = new System.Drawing.Point(150, 134);
-            this.deck2Name.Name = "deck2Name";
-            this.deck2Name.Size = new System.Drawing.Size(0, 17);
-            this.deck2Name.TabIndex = 17;
-            // 
-            // deck4Name
-            // 
-            this.deck4Name.AutoSize = true;
-            this.deck4Name.Location = new System.Drawing.Point(150, 210);
-            this.deck4Name.Name = "deck4Name";
-            this.deck4Name.Size = new System.Drawing.Size(0, 17);
-            this.deck4Name.TabIndex = 18;
-            // 
-            // deck3Name
-            // 
-            this.deck3Name.AutoSize = true;
-            this.deck3Name.Location = new System.Drawing.Point(34, 212);
-            this.deck3Name.Name = "deck3Name";
-            this.deck3Name.Size = new System.Drawing.Size(0, 17);
-            this.deck3Name.TabIndex = 19;
-            // 
-            // deck6Name
-            // 
-            this.deck6Name.AutoSize = true;
-            this.deck6Name.Location = new System.Drawing.Point(150, 288);
-            this.deck6Name.Name = "deck6Name";
-            this.deck6Name.Size = new System.Drawing.Size(0, 17);
-            this.deck6Name.TabIndex = 20;
-            // 
-            // deck5Name
-            // 
-            this.deck5Name.AutoSize = true;
-            this.deck5Name.Location = new System.Drawing.Point(34, 288);
-            this.deck5Name.Name = "deck5Name";
-            this.deck5Name.Size = new System.Drawing.Size(0, 17);
-            this.deck5Name.TabIndex = 21;
-            // 
-            // deck8Name
-            // 
-            this.deck8Name.AutoSize = true;
-            this.deck8Name.Location = new System.Drawing.Point(150, 364);
-            this.deck8Name.Name = "deck8Name";
-            this.deck8Name.Size = new System.Drawing.Size(0, 17);
-            this.deck8Name.TabIndex = 22;
-            // 
-            // deckImg7
-            // 
-            this.deckImg7.Location = new System.Drawing.Point(37, 308);
-            this.deckImg7.Name = "deckImg7";
-            this.deckImg7.Size = new System.Drawing.Size(80, 55);
-            this.deckImg7.TabIndex = 23;
-            this.deckImg7.TabStop = false;
-            this.deckImg7.Click += new System.EventHandler(this.DeckImg7_Click);
-            // 
-            // deck7Name
-            // 
-            this.deck7Name.AutoSize = true;
-            this.deck7Name.Location = new System.Drawing.Point(34, 364);
-            this.deck7Name.Name = "deck7Name";
-            this.deck7Name.Size = new System.Drawing.Size(0, 17);
-            this.deck7Name.TabIndex = 24;
+            this.playerPanel.BackColor = System.Drawing.Color.White;
+            this.playerPanel.Location = new System.Drawing.Point(12, 78);
+            this.playerPanel.Margin = new System.Windows.Forms.Padding(6, 6, 20, 6);
+            this.playerPanel.Name = "playerPanel";
+            this.playerPanel.Size = new System.Drawing.Size(232, 306);
+            this.playerPanel.TabIndex = 9;
             // 
             // TournamentViewer
             // 
@@ -289,26 +129,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(60)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(736, 417);
-            this.Controls.Add(this.deck7Name);
-            this.Controls.Add(this.deckImg7);
-            this.Controls.Add(this.deck8Name);
-            this.Controls.Add(this.deck5Name);
-            this.Controls.Add(this.deck6Name);
-            this.Controls.Add(this.deck3Name);
-            this.Controls.Add(this.deck4Name);
-            this.Controls.Add(this.deck2Name);
-            this.Controls.Add(this.deck1Name);
-            this.Controls.Add(this.deckImg8);
-            this.Controls.Add(this.deckImg6);
-            this.Controls.Add(this.deckImg5);
-            this.Controls.Add(this.deckImg3);
-            this.Controls.Add(this.deckImg4);
-            this.Controls.Add(this.deckImg2);
-            this.Controls.Add(this.deckImg1);
+            this.Controls.Add(this.playerPanel);
             this.Controls.Add(this.tournamentLabel);
             this.Controls.Add(this.enemiesListView);
             this.Controls.Add(this.playBtn);
-            this.Controls.Add(this.playerListView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.backBtn);
@@ -319,14 +143,6 @@
             this.Name = "TournamentViewer";
             this.Text = "The Ultimate Tournament";
             ((System.ComponentModel.ISupportInitialize)(this.vsImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deckImg7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,26 +154,10 @@
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView playerListView;
         private System.Windows.Forms.Button playBtn;
         private System.Windows.Forms.ListView enemiesListView;
         private System.Windows.Forms.ColumnHeader nameColumn;
         private System.Windows.Forms.Label tournamentLabel;
-        private System.Windows.Forms.PictureBox deckImg1;
-        private System.Windows.Forms.PictureBox deckImg2;
-        private System.Windows.Forms.PictureBox deckImg4;
-        private System.Windows.Forms.PictureBox deckImg3;
-        private System.Windows.Forms.PictureBox deckImg5;
-        private System.Windows.Forms.PictureBox deckImg6;
-        private System.Windows.Forms.PictureBox deckImg8;
-        private System.Windows.Forms.Label deck1Name;
-        private System.Windows.Forms.Label deck2Name;
-        private System.Windows.Forms.Label deck4Name;
-        private System.Windows.Forms.Label deck3Name;
-        private System.Windows.Forms.Label deck6Name;
-        private System.Windows.Forms.Label deck5Name;
-        private System.Windows.Forms.Label deck8Name;
-        private System.Windows.Forms.PictureBox deckImg7;
-        private System.Windows.Forms.Label deck7Name;
+        private System.Windows.Forms.FlowLayoutPanel playerPanel;
     }
 }

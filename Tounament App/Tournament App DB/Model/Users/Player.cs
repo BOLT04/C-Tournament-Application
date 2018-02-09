@@ -11,10 +11,10 @@ namespace TournamentAppDB.Model.Users {
         public int Points { get; set; }
 
         public List<Deck> Decks { get; set; } = new List<Deck> {
-                new Deck("Default deck", Resources.resPath + "\\nature_deck_icon.png")
+                new Deck(Resources.DEFAULT_DECK, Resources.resPath + "\\nature_deck_icon.png")
         };
 
-        public Player() { }
+        public Player() : base() { }
 
         public Player(string name)
             : base(name) { }
@@ -24,7 +24,7 @@ namespace TournamentAppDB.Model.Users {
             Decks = decks;
         }
 
-        public static global::TounamentAppUI.CustomControllers.CardViewer GetRandomCard(List<Card> selectedCards) {
+        public static Card GetRandomCard(List<Card> selectedCards) {
             throw new NotImplementedException();
         }
     }

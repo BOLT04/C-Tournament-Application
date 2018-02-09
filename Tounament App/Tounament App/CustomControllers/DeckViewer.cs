@@ -21,17 +21,14 @@ namespace TounamentAppUI.CustomControllers {
         public static readonly int INIT_X = 3;
         public static readonly int INIT_Y = 3;
         public static readonly int WIDTH = 80;
-        public static readonly int HEIGHT = 55;
+        public static readonly int HEIGHT = 69;
 
         //Backgroung and rectangle colors.
         public static readonly Color HOVER_COLOR = Color.SteelBlue;
         public static readonly Color NORMAL_COLOR = Color.White;
         public static readonly Color SELECTED_COLOR = Color.LightGreen;
 
-        //Text colors
         public static readonly Color TEXT_COLOR1 = Color.Black;
-
-        protected bool selected;
 
         public Deck Deck { get; set; } = new Deck();
         public PictureBox Img { get; set; } = new PictureBox();
@@ -40,19 +37,22 @@ namespace TounamentAppUI.CustomControllers {
         public Color MouseInColor { get; set; }
         public Color NormalColor { get; set; }
         
+        private TournamentViewer TrV { get; set; }
+
         public DeckViewer() {
             InitializeComponent();
 
             //Define the location and size of this control to make it visible.
-            Location = new Point(INIT_X, INIT_Y);
+            //Location = new Point(INIT_X, INIT_Y);
             Size = new Size(WIDTH, HEIGHT);
 
             NormalColor = NORMAL_COLOR;
             MouseInColor = Color.Transparent;
         }
 
-        public DeckViewer(Deck d) : this() {
+        public DeckViewer(Deck d, TournamentViewer trV) : this() {
             Deck = d;
+            TrV = trV;
 
             Text = d.Name;
             Img.ChangeImageTo(d.Path);
@@ -72,7 +72,8 @@ namespace TounamentAppUI.CustomControllers {
             byte penW = 5;
             g.DrawRectangle(new Pen(MouseInColor, penW), rc);// Draw outline for the card.
 
-            g.DrawString(Text, new Font(FONT_FAMILY, 8F), txtBrush, new RectangleF(rc.Left, rc.Bottom -40, rc.Width, rc.Height));
+            g.DrawImage(Img.Image, new Point(rc.X, rc.Y));
+            g.DrawString(Text, new Font(FONT_FAMILY, 8F), txtBrush, new RectangleF(rc.Left, rc.Bottom -13, rc.Width, rc.Height));
         }
 
         protected override void OnPaintBackground(PaintEventArgs pevent) {
@@ -87,6 +88,10 @@ namespace TounamentAppUI.CustomControllers {
         protected override void OnMouseLeave(EventArgs e) {
             MouseInColor = Color.Transparent;
             Invalidate();
+        }
+
+        protected override void OnClick(EventArgs e) {
+            TrV.DeckNameSelected = Deck.Name;
         }
     }
 

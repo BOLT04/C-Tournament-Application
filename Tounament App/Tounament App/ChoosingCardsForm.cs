@@ -17,8 +17,8 @@ namespace TounamentAppUI {
         public static readonly int MAX_SELECTED_CARDS = 4;
 
         public Tournament Tr { get; set; }
-        //Name of deck selected.
-        private string deckName = Properties.Resources.defaultStr;
+        // Deck selected.
+        private Deck selDeck;
 
         public List<Card> SelectedCards { get; set; }
         public List<Card> UnSelectedCards { get; set; } 
@@ -27,12 +27,14 @@ namespace TounamentAppUI {
             InitializeComponent();
 
             SelectedCards = new List<Card>(MAX_SELECTED_CARDS);
-            UnSelectedCards = new List<Card>(Tr.Player.Decks.Count - MAX_SELECTED_CARDS);
         }
 
-        public ChoosingCardsForm(Tournament tr, string deckName) : this(){
+        public ChoosingCardsForm(Tournament tr, string deckName) : this() {
             Tr = tr;
-            this.deckName = deckName;
+
+            selDeck = Tr.Player.Decks.Find(d => d.Name.Equals(deckName));
+
+            UnSelectedCards = new List<Card>(selDeck.Count - MAX_SELECTED_CARDS);
 
             InitializeCardsPanel();
         }
@@ -41,8 +43,6 @@ namespace TounamentAppUI {
         /// Fill the cardsPanel with all cards inside the choosen deck.
         /// </summary>
         private void InitializeCardsPanel() {
-            Deck selDeck = Tr.Player.Decks.Find(d => d.Name.Equals(deckName));
-
             foreach (Card c in selDeck.Cards) {
                 CardViewerChoosing cV = new CardViewerChoosing(c, this);
                 cardsPanel.Controls.Add(cV);
