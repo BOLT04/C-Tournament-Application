@@ -61,7 +61,7 @@ namespace TounamentAppUI {
             if (SelectedCards.Count != MAX_SELECTED_CARDS)
                 MessageBox.Show("Please select " +MAX_SELECTED_CARDS+ " cards before continuing", "Error", MessageBoxButtons.OK,               MessageBoxIcon.Information);
             else
-                new BattleForm(Tr, SelectedCards, UnSelectedCards).ShowAndHide(this);
+                new BattleForm(Tr, 0, SelectedCards, UnSelectedCards).ShowAndHide(this);
         }
     }
 }

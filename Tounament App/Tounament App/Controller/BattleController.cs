@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading.Tasks;
+using System.Threading;
 using TounamentAppUI.CustomControllers;
 using TournamentAppDB.Model;
 using TournamentAppDB.Model.Users;
@@ -15,15 +15,13 @@ namespace TounamentAppUI.Controller {
             void OnTurnEnd();
         }
 
-        private Enemy enemy;
         private BattleForm battleF;
 
         private CardViewer currPlayerCard;
 
         private Action onTurnEnd;
 
-        public BattleController(Enemy enemy, BattleForm bF) {
-            this.enemy = enemy;
+        public BattleController(BattleForm bF) {
             battleF = bF;
             
             onTurnEnd = () => {
@@ -42,14 +40,43 @@ namespace TounamentAppUI.Controller {
 
         private void StartEnemyTurn() {
             battleF.ChangeToEnemyTurn();// Moves the turn label and sets the according text.
-            /*
-            Card enemyCard = enemy.GetRandomCard(battleF.GetControlsOfEnemyPanel());
 
-            
-            currPlayerCard = Player.GetRandomCard(battleF.SelectedCards);
-            ...
-            onTurnEnd();
-             */
+            Thread.Sleep(2000); // Give a little delay before choosing random cards.
+
+            CardViewer enemyRandCard = GetRandomEnemyCard();
+            currPlayerCard = GetRandomPlayerCard();
+
+            Battle(currPlayerCard, enemyRandCard);
+
+            ResetAndNotifyDelegate();
+        }
+
+        private static Random rand = new Random();
+
+        private CardViewer GetRandomPlayerCard() {
+            // Get the controls that represent the enemy's hand.
+            Control.ControlCollection handV = battleF.GetControlsOfPlayerPanel();
+            CardViewer cV;
+
+            do {
+                int idx = rand.Next(battleF.Tr.Player.Hand.Count);
+                cV = (CardViewer)handV[idx];
+            } while (cV.Card.Health <= 0);
+
+            return cV;
+        }
+
+        private CardViewer GetRandomEnemyCard() {
+            // Get the controls that represent the enemy's hand.
+            Control.ControlCollection handV = battleF.GetControlsOfEnemyPanel();
+            CardViewer cV;
+
+            do {
+                int idx = rand.Next(battleF.CurrEnemy.Hand.Count);
+                cV = (CardViewer) handV[idx];
+            } while (cV.Card.Health <= 0);
+
+            return cV;
         }
 
         private bool SelectedPlayerCard;
@@ -72,11 +99,10 @@ namespace TounamentAppUI.Controller {
 
             Battle(currPlayerCard, enemyCard);
 
-            Reset();
-            onTurnEnd();
+            ResetAndNotifyDelegate();
         }
 
-        private void Battle(CardViewer plCardView, CardViewerEnemy enCardView) {
+        private void Battle(CardViewer plCardView, CardViewer enCardView) {
             Card plCard = plCardView.Card;
             Card enCard = enCardView.Card;
 
@@ -91,21 +117,26 @@ namespace TounamentAppUI.Controller {
             plCardView.Invalidate();
             enCardView.Invalidate();
 
+            /* Remove card view and its model if the cards are below than zero.*/
             if (newPlHP <= 0) {
-                // Remove card view and its model.
                 battleF.GetControlsOfPlayerPanel().Remove(plCardView);
-                battleF.CurrEnemy.Hand.Remove(enCard);
-            }
-            if (newEnHP <= 0) {
-                // Remove card view and its model.
-                battleF.GetControlsOfEnemyPanel().Remove(enCardView);
                 battleF.Tr.Player.Hand.Remove(plCard);
+            }
+
+            if (newEnHP <= 0) {
+                battleF.GetControlsOfEnemyPanel().Remove(enCardView);
+                battleF.CurrEnemy.Hand.Remove(enCard);
             }
         }
 
         private void Reset() {
             currPlayerCard = null;
             SelectedPlayerCard = false;
+        }
+
+        private void ResetAndNotifyDelegate() {
+            Reset();
+            onTurnEnd();
         }
 
     }

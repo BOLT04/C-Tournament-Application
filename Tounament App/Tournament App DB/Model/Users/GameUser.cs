@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TournamentAppDB.Properties;
 
 namespace TournamentAppDB.Model.Users {
@@ -16,6 +17,18 @@ namespace TournamentAppDB.Model.Users {
 
         public GameUser(string name) : this() {
             Name = name;
+        }
+
+        public Card GetRandomCard() {
+            Random rand = new Random();
+            Card c;
+
+            do {
+                int idx = rand.Next(Hand.Count);
+                c = Hand[idx];
+            } while (c.Health <= 0);
+
+            return c;
         }
     }
 }

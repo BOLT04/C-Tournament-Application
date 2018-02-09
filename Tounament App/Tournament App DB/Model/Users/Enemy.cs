@@ -30,17 +30,7 @@ namespace TournamentAppDB.Model.Users {
             Deck = deck;
         }
 
-        public Card GetRandomCard() {
-            Random rand = new Random();
-            Card c;
-
-            do {
-                int idx = rand.Next(Hand.Count);
-                c = Hand[idx];
-            } while (c.Health <= 0);
-
-            return c;
-        }
+        /*TODO: Should there be one static Random instance so that all generated random integers have equally odds??*/
 
         public Card GetRandomCardFromDeck() {
             Random rand = new Random();

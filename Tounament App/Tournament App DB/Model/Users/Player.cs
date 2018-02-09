@@ -16,16 +16,10 @@ namespace TournamentAppDB.Model.Users {
 
         public Player() : base() { }
 
-        public Player(string name)
-            : base(name) { }
+        public Player(string name) : base(name) { }
 
-        public Player(string name, List<Deck> decks)
-            : this(name) {
+        public Player(string name, List<Deck> decks) : this(name) {
             Decks = decks;
-        }
-
-        public static Card GetRandomCard(List<Card> selectedCards) {
-            throw new NotImplementedException();
         }
     }
 }

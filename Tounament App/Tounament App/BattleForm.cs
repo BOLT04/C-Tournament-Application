@@ -34,17 +34,17 @@ namespace TounamentAppUI {
 
         public BattleForm() {
             InitializeComponent();
-
-            controller = new BattleController(CurrEnemy, this);
         }
 
-        public BattleForm(Tournament tr, List<Card> selectedCards, List<Card> unSelectedCards) : this() {
+        public BattleForm(Tournament tr, int enemyCount, List<Card> selectedCards, List<Card> unSelectedCards) : this() {
             Tr = tr;
             Tr.Player.Hand = selectedCards;
 
             UnSelectedCards = unSelectedCards;
 
-            CurrEnemy = Tr.Enemies[0];
+            CurrEnemy = Tr.Enemies[enemyCount];
+
+            controller = new BattleController(this);
 
             turnLabel.Text = TURN_LABEL_PLAYER_TEXT;
 
@@ -69,11 +69,15 @@ namespace TounamentAppUI {
         public void ChangeToPlayerTurn() {
             turnLabel.Location = new Point(TURN_LABEL_X_POS, TURN_LABEL_PLAYER_Y_POS);
             turnLabel.Text = TURN_LABEL_PLAYER_TEXT;
+
+            turnLabel.Invalidate();
         }
 
         public void ChangeToEnemyTurn() {
             turnLabel.Location = new Point(TURN_LABEL_X_POS, TURN_LABEL_ENEMY_Y_POS);
             turnLabel.Text = TURN_LABEL_ENEMY_TEXT;
+
+            turnLabel.Invalidate();
         }
 
         public void OnClickPlayerCard(CardViewerBattle cV) {
