@@ -96,6 +96,7 @@ namespace TounamentAppUI.CustomControllers {
 
         protected override void OnPaint(PaintEventArgs pe) {
             Graphics g = pe.Graphics;
+
             Rectangle rc = new Rectangle(ClientRectangle.X, ClientRectangle.Y, WIDTH, HEIGHT);
 
             Brush normalBrush = new SolidBrush(NormalColor);

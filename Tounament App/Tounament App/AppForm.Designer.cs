@@ -45,6 +45,10 @@
             this.playBtn.UseVisualStyleBackColor = true;
             this.playBtn.Click += new System.EventHandler(this.PlayBtn_Click);
             this.playBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.PlayBtn_Paint);
+            this.playBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayBtn_MouseDown);
+            this.playBtn.MouseEnter += new System.EventHandler(this.PlayBtn_MouseEnter);
+            this.playBtn.MouseLeave += new System.EventHandler(this.PlayBtn_MouseLeave);
+            this.playBtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PlayBtn_MouseUp);
             // 
             // editCharacter
             // 
@@ -67,7 +71,6 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(116, 427);
             this.leftPanel.TabIndex = 2;
-            this.leftPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // playerInfoIcon
             // 
@@ -92,7 +95,6 @@
             this.gameNamePanel.Name = "gameNamePanel";
             this.gameNamePanel.Size = new System.Drawing.Size(620, 85);
             this.gameNamePanel.TabIndex = 3;
-            this.gameNamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
