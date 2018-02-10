@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="defaultStr" xml:space="preserve">
-    <value>DEFAULT</value>
-  </data>
-  <data name="WINDOW_HEIGHT" xml:space="preserve">
-    <value>456</value>
-  </data>
-  <data name="WINDOW_WIDTH" xml:space="preserve">
-    <value>752</value>
-  </data>
 </root>

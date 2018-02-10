@@ -14,14 +14,15 @@ using TournamentAppDB.Model.Tournaments;
 using TournamentAppDB.Properties;
 
 namespace TournamentAppUITest {
+
     public partial class TournamentViewerTests : Form {
         public TournamentViewerTests() {
             InitializeComponent();
         }
 
-        private static Deck deck1 = new Deck("First deck", Resources.resPath + "\\nature_deck_icon.png");
-        private static Deck deck2 = new Deck("Second deck", Resources.resPath + "\\nature_deck_icon.png");
-        private static Deck deck3 = new Deck("Awesome deck", Resources.resPath + "\\light_deck_icon.png");
+        public static Deck deck1 = new Deck("First deck", Resources.resPath + "\\nature_deck_icon.png");
+        public static Deck deck2 = new Deck("Second deck", Resources.resPath + "\\nature_deck_icon.png");
+        public static Deck deck3 = new Deck("Awesome deck", Resources.resPath + "\\light_deck_icon.png");
 
         private void TestBtn1_Click(object sender, EventArgs e) {
             List<Deck> decks = new List<Deck> {

@@ -68,5 +68,23 @@ namespace TounamentAppUI.Properties {
                 return ResourceManager.GetString("defaultStr", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 456.
+        /// </summary>
+        internal static string WINDOW_HEIGHT {
+            get {
+                return ResourceManager.GetString("WINDOW_HEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 752.
+        /// </summary>
+        internal static string WINDOW_WIDTH {
+            get {
+                return ResourceManager.GetString("WINDOW_WIDTH", resourceCulture);
+            }
+        }
     }
 }

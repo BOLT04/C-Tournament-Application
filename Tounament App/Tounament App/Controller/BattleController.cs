@@ -25,6 +25,8 @@ namespace TounamentAppUI.Controller {
             battleF = bF;
             
             onTurnEnd = () => {
+                if (battleF.GetIsTestingPlayer()) return; // To continue the player's turn.
+                
                 IsPlayerTurn = !IsPlayerTurn;// Change turns.
 
                 if (IsPlayerTurn)
@@ -47,6 +49,8 @@ namespace TounamentAppUI.Controller {
             currPlayerCard = GetRandomPlayerCard();
 
             Battle(currPlayerCard, enemyRandCard);
+
+            Thread.Sleep(2000);
 
             ResetAndNotifyDelegate();
         }
@@ -127,6 +131,17 @@ namespace TounamentAppUI.Controller {
                 battleF.GetControlsOfEnemyPanel().Remove(enCardView);
                 battleF.CurrEnemy.Hand.Remove(enCard);
             }
+
+            IsOver();
+        }
+
+        private void IsOver() {
+            if (battleF.CurrEnemy.Hand.Count <= 0 && battleF.Tr.Player.Hand.Count > 0)
+                battleF.DisplayVictory();
+            else if (battleF.CurrEnemy.Hand.Count > 0 && battleF.Tr.Player.Hand.Count <= 0)
+                battleF.DisplayDefeat();
+            else if (battleF.CurrEnemy.Hand.Count == 0 && battleF.Tr.Player.Hand.Count == 0)
+                battleF.DisplayDraw();
         }
 
         private void Reset() {

@@ -2,7 +2,7 @@
     using System;
     using System.Windows.Forms;
 
-    public static class TestApp {
+    public static class TestBattleApp {
         
         /// <summary>
         /// The main entry point for the application.
@@ -11,7 +11,7 @@
         public static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TournamentViewerTests());
+            Application.Run(new BattleFormTest());
         }
     }
 }
