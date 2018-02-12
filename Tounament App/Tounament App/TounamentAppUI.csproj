@@ -59,6 +59,12 @@
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\BattleController.cs" />
+    <Compile Include="CustomControllers\GradientButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControllers\GradientButton.Designer.cs">
+      <DependentUpon>GradientButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControllers\DeckViewer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BattleForm.resx">
       <DependentUpon>BattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControllers\GradientButton.resx">
+      <DependentUpon>GradientButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControllers\DeckViewer.resx">
       <DependentUpon>DeckViewer.cs</DependentUpon>

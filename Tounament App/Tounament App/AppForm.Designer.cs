@@ -24,43 +24,15 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm));
-            this.playBtn = new System.Windows.Forms.Button();
-            this.editCharacter = new System.Windows.Forms.Button();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.playerInfoIcon = new System.Windows.Forms.Button();
             this.gameNamePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.gradientButton1 = new TounamentAppUI.CustomControllers.GradientButton();
+            this.playBtn = new TounamentAppUI.CustomControllers.GradientButton();
             this.leftPanel.SuspendLayout();
             this.gameNamePanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // playBtn
-            // 
-            this.playBtn.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playBtn.Location = new System.Drawing.Point(331, 138);
-            this.playBtn.Name = "playBtn";
-            this.playBtn.Size = new System.Drawing.Size(124, 66);
-            this.playBtn.TabIndex = 0;
-            this.playBtn.Text = "Play";
-            this.playBtn.UseVisualStyleBackColor = true;
-            this.playBtn.Click += new System.EventHandler(this.PlayBtn_Click);
-            this.playBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.PlayBtn_Paint);
-            this.playBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayBtn_MouseDown);
-            this.playBtn.MouseEnter += new System.EventHandler(this.PlayBtn_MouseEnter);
-            this.playBtn.MouseLeave += new System.EventHandler(this.PlayBtn_MouseLeave);
-            this.playBtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PlayBtn_MouseUp);
-            // 
-            // editCharacter
-            // 
-            this.editCharacter.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editCharacter.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.editCharacter.Location = new System.Drawing.Point(331, 261);
-            this.editCharacter.Name = "editCharacter";
-            this.editCharacter.Size = new System.Drawing.Size(124, 68);
-            this.editCharacter.TabIndex = 1;
-            this.editCharacter.Text = "Edit Character";
-            this.editCharacter.UseVisualStyleBackColor = true;
-            this.editCharacter.Click += new System.EventHandler(this.EditCharacter_Click);
             // 
             // leftPanel
             // 
@@ -106,16 +78,40 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "The Ultimate Tournament";
             // 
+            // gradientButton1
+            // 
+            this.gradientButton1.Location = new System.Drawing.Point(331, 261);
+            this.gradientButton1.MouseInColor = System.Drawing.Color.Transparent;
+            this.gradientButton1.Name = "gradientButton1";
+            this.gradientButton1.NormalColor = System.Drawing.Color.White;
+            this.gradientButton1.Rect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.gradientButton1.Size = new System.Drawing.Size(176, 65);
+            this.gradientButton1.TabIndex = 5;
+            this.gradientButton1.Text_X = 40;
+            this.gradientButton1.UseVisualStyleBackColor = true;
+            // 
+            // playBtn
+            // 
+            this.playBtn.Location = new System.Drawing.Point(331, 178);
+            this.playBtn.MouseInColor = System.Drawing.Color.Transparent;
+            this.playBtn.Name = "playBtn";
+            this.playBtn.NormalColor = System.Drawing.Color.White;
+            this.playBtn.Rect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.playBtn.Size = new System.Drawing.Size(176, 68);
+            this.playBtn.TabIndex = 4;
+            this.playBtn.Text_X = 70;
+            this.playBtn.UseVisualStyleBackColor = true;
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(60)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(736, 427);
+            this.Controls.Add(this.gradientButton1);
+            this.Controls.Add(this.playBtn);
             this.Controls.Add(this.gameNamePanel);
             this.Controls.Add(this.leftPanel);
-            this.Controls.Add(this.editCharacter);
-            this.Controls.Add(this.playBtn);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -131,13 +127,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button playBtn;
-        private System.Windows.Forms.Button editCharacter;
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Panel gameNamePanel;
         private System.Windows.Forms.Button playerInfoIcon;
         private System.Windows.Forms.Label label1;
+        private CustomControllers.GradientButton playBtn;
+        private CustomControllers.GradientButton gradientButton1;
     }
 }
 
